@@ -1,6 +1,9 @@
 # Adsprpcd
 type public_adsprpcd_file, file_type;
 
+# DebugFS
+type debugfs_wlan, fs_type, debugfs_type;
+
 # FIH Partitions
 type fih_partition, dev_type;
 
@@ -14,3 +17,5 @@ type proc_fih, fs_type, proc_type;
 # Sysfs
 type sysfs_iio, sysfs_type, fs_type;
 type sysfs_ois, sysfs_type, fs_type;
+type sysfs_msm_subsys, fs_type, sysfs_type;
+type sysfs_usb_device, sysfs_type, fs_type;
