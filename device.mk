@@ -397,7 +397,7 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power.stats@1.0-service.mock
-    android.hardware.power@1.3-service.nokia_msm8998
+     android.hardware.power-service.nokia_msm8998-libperfmgr
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
