@@ -498,4 +498,9 @@
             2 - Global actions menu
     -->
     <integer name="config_keyChordPowerVolumeUp">1</integer>
+
+    <!-- Button backlight -->
+    <bool name="config_button_brightness_support">true</bool>
+    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
+    <integer name="config_button_brightness_default">128</integer>
 </resources>
