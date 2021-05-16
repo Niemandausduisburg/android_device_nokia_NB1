@@ -141,7 +141,6 @@ ro.hwui.text_large_cache_height=4096
 
 # Media
 vidc.enc.dcvs.extra-buff-count=2
-debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
