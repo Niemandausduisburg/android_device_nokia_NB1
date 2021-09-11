@@ -450,10 +450,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:root/init.recovery.qcom.rc
 
-# RenderScript HAL
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.nb1.smartamp_init.sh \
