@@ -19,6 +19,11 @@ ro.bluetooth.library_name=libbluetooth_qti.so
 # BPF
 ro.kernel.ebpf.supported=true
 
+# Camera
+camera.disable_zsl_mode=1
+camera.mono_only=1
+vendor.camera.aux.packagelist=com.evenwell.camera2,com.tools.alt,com.hmdglobal.camera2,org.codeaurora.snapcam
+
 # Data modules
 persist.data.netmgrd.qos.enable=true
 persist.vendor.data.mode=concurrent

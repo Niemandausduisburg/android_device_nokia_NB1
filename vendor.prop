@@ -81,15 +81,12 @@ vendor.qcom.bluetooth.soc=cherokee
 ro.vendor.bluetooth.wipower=false
 
 # Camera
-camera.disable_zsl_mode=1
-camera.mono_only=1
 persist.vendor.camera.gyro.android=0
 persist.vendor.camera.gyro.disable=0
 persist.vendor.camera.tof.direct=1
 persist.vendor.camera.HAL3.enabled=1
 persist.vendor.camera.ois.disable=0
 persist.vendor.sys.exif.model="Nokia 8"
-vendor.camera.aux.packagelist=com.evenwell.camera2,com.tools.alt,com.hmdglobal.camera2,org.codeaurora.snapcam
 vendor.voice.path.for.pcm.voip=false
 
 # CNE
