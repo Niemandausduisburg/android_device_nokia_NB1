@@ -2898,7 +2898,6 @@
 
     <path name="speaker-mic-liquid">
         <path name="dmic2" />
-        <ctl name="DEC7 Volume" value="111" />
     </path>
 
     <path name="speaker-mic-sbc">
@@ -2964,13 +2963,17 @@
         <ctl name="AIF1_CAP Mixer SLIM TX6" value="1" />
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
         <ctl name="SLIM_0_TX Channels" value="Three" />
+        <ctl name="SLIM_0_TX Format" value="S24_3LE" />
         <ctl name="SLIM TX5 MUX" value="DEC5" />
+        <ctl name="DEC5 Volume" value="96" />
         <ctl name="ADC MUX5" value="DMIC" />
         <ctl name="DMIC MUX5" value="DMIC4" />
         <ctl name="SLIM TX6 MUX" value="DEC6" />
+        <ctl name="DEC6 Volume" value="96" />
         <ctl name="ADC MUX6" value="DMIC" />
         <ctl name="DMIC MUX6" value="DMIC2" />
         <ctl name="SLIM TX8 MUX" value="DEC8" />
+        <ctl name="DEC8 Volume" value="96" />
         <ctl name="ADC MUX8" value="DMIC" />
         <ctl name="DMIC MUX8" value="DMIC0" />
     </path>
