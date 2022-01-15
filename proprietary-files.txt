@@ -110,16 +110,13 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 # Bluetooth (A2dp)
 vendor/lib/hw/audio.bluetooth_qti.default.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
-vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib/btaudio_offload_if.so
-vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib/libbluetooth_audio_session_qti.so
 vendor/lib/libbluetooth_audio_session_qti_2_1.so
 vendor/lib64/hw/audio.bluetooth_qti.default.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib64/btaudio_offload_if.so
-vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
 
@@ -294,7 +291,6 @@ vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib64/vendor.qti.hardware.mwqemadapter@1.0.so
 
 # Charger
-bin/charger
 vendor/bin/hvdcp_opti
 
 # DPM
@@ -435,7 +431,6 @@ vendor/bin/mlid
 vendor/bin/slim_daemon
 vendor/bin/xtra-daemon
 -vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
-vendor/etc/gnss_antenna_info.conf
 vendor/etc/gpfspath_oem_config.xml
 vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so
 vendor/lib64/libcdfw_remote_api.so

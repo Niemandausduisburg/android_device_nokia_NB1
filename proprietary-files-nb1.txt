@@ -44,7 +44,6 @@ vendor/lib/libflash_pmic.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
-vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmcamera_sonyimx135_eeprom.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpegdma.so
@@ -87,7 +86,6 @@ vendor/lib/libmmcamera_imx362_gt24c64a.so
 vendor/lib/libmmcamera_imx362.so
 vendor/lib/libmmcamera_imx376.so
 vendor/lib/libmmcamera_imx378.so
-vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmcamera_irs1645.so
 vendor/lib/libmmcamera_isp_abf48.so
 vendor/lib/libmmcamera_isp_aec_bg_stats47.so
@@ -565,7 +563,7 @@ vendor/lib64/libfp_client.so|a132bbbde9ef7aac598fd314c087272dd474ded1
 vendor/lib64/libfpservice.so|29fd00a0bbd06c3cd608133b04205625b571d824
 vendor/lib64/libfpjni.so
 vendor/lib64/libqfp-service.so
-vendor/lib64/hw/fingerprint.default.so
+vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8998.so
 vendor/lib64/hw/gxfingerprint.default.so
 
 # Fingerprint (Firmware)
