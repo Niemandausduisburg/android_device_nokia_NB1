@@ -29,19 +29,29 @@ CLEAN_VENDOR=true
 SECTION=
 KANG=
 
-if [ $# -eq 0 ]; then
-  SRC_COMMON=adb
-  SRC_DEVICE=adb
-else
-  if [ $# -eq 2 ]; then
-    SRC_COMMON=${1}
-    SRC_DEVICE=${2}
-  else
-    echo "${0}: Bad number of arguments"
-    echo ""
-    echo "Usage: ./extract-files.sh common_dump device_dump"
-    exit 1
-  fi
+while [ "${#}" -gt 0 ]; do
+    case "${1}" in
+        -n | --no-cleanup )
+                CLEAN_VENDOR=false
+                ;;
+        -k | --kang )
+                KANG="--kang"
+                ;;
+        -s | --section )
+                SECTION="${2:?}"; shift
+                CLEAN_VENDOR=false
+                ;;
+        * )
+                SRC="${1:?}"
+                SRC_NB1="${2:?}"; shift
+                ;;
+    esac
+    shift
+done
+
+if [ -z "${SRC}" ]; then
+    SRC="adb"
+    SRC_NB1="adb"
 fi
 
 function blob_fixup() {
@@ -80,10 +90,10 @@ function blob_fixup() {
     esac
 }
 
-# Initialize the helper for common device
-setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" true "${CLEAN_VENDOR}"
+# Initialize the helper
+setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
 
-extract "${MY_DIR}/proprietary-files.txt" "${SRC_COMMON}" "${KANG}" --section "${SECTION}"
-extract "${MY_DIR}/proprietary-files-nb1.txt" "${SRC_DEVICE}" "${KANG}" --section "${SECTION}"
+extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+extract "${MY_DIR}/proprietary-files-nb1.txt" "${SRC_NB1}" "${KANG}" --section "${SECTION}"
 
 "${MY_DIR}/setup-makefiles.sh"
