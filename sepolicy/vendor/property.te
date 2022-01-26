@@ -1,2 +1,5 @@
+# Camera
+type vendor_camera_prop, property_type;
+
 # Power
 type vendor_power_prop, property_type;
