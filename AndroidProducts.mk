@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/corvus_NB1.mk
+    $(LOCAL_DIR)/hentai_NB1.mk
 
 COMMON_LUNCH_CHOICES := \
-    corvus_NB1-user \
-    corvus_NB1-userdebug \
-    corvus_NB1-eng
+    hentai_NB1-user \
+    hentai_NB1-userdebug \
+    hentai_NB1-eng
