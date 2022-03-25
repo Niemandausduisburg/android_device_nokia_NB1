@@ -500,6 +500,11 @@ service vendor.qcom-c_core-sh  /vendor/bin/init.qcom.class_core.sh
     user root
     oneshot
 
+on property:persist.sys.radio.mobile_data_swap=1
+    restart vendor.qcrild
+    exec /bin/sleep 2
+    restart vendor.qcrild2
+
 service vendor.qcom-c_main-sh /vendor/bin/init.class_main.sh
     class main
     user root
