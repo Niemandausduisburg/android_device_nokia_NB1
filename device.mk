@@ -104,9 +104,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
+# Build-System
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
+
 # Camera
 PRODUCT_PACKAGES += \
-    GCamGOPrebuilt
+    GCamGreatness
 
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0_32 \
@@ -122,6 +125,12 @@ PRODUCT_PACKAGES += \
     libmm-qcamera \
     mm-qcamera-app \
     libhal_dbg
+    
+# Camera NoGAPPS-fix
+ifeq ($(USE_GAPPS),false)
+PRODUCT_PACKAGES += \
+    GCamFix
+endif
 
 # Charger
 PRODUCT_PACKAGES += \

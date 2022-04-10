@@ -23,7 +23,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Inherit Gapps
 ifeq ($(USE_GAPPS),true)
-include vendor/google/gms/config.mk
+include vendor/gapps/arm64/arm64-vendor.mk
 endif
 
 # Face Unlock
