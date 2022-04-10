@@ -419,10 +419,8 @@ PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/task_profiles_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
     
 # Remove unwanted packages
-ifneq ($(REMOVE_PACKAGES), true)
 PRODUCT_PACKAGES += \
     RemovePackages
-endif
 
 # Protobuf
 PRODUCT_PACKAGES += \
