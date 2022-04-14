@@ -127,10 +127,10 @@ PRODUCT_PACKAGES += \
     libhal_dbg
     
 # Camera NoGAPPS-fix
-ifeq ($(USE_GAPPS),false)
-PRODUCT_PACKAGES += \
-    GCamFix
-endif
+#ifeq ($(USE_FLAMEGAPPS),false)
+#PRODUCT_PACKAGES += \
+#    GCamFix
+#endif
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -206,7 +206,7 @@ PRODUCT_PACKAGES += \
     android.frameworks.stats@1.0.vendor \
     android.hardware.biometrics.fingerprint@2.1.vendor \
     android.hardware.biometrics.fingerprint@2.2.vendor \
-    android.hardware.biometrics.fingerprint@2.1-service
+    android.hardware.biometrics.fingerprint@2.1-service 
 
 # FM
 PRODUCT_PACKAGES += \

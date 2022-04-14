@@ -22,8 +22,8 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Inherit Gapps
-ifeq ($(USE_GAPPS),true)
-include vendor/gapps/arm64/arm64-vendor.mk
+ifeq ($(USE_FLAMEGAPPS), true)
+include vendor/flamegapps/common/flamegapps.mk
 endif
 
 # Face Unlock
