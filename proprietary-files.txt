@@ -608,6 +608,8 @@ vendor/lib64/libperipheral_client.so
 # Perf - from taimen RP1A.201005.004
 vendor/lib/libqti-perfd-client.so|08b0cd20dbc79645ee73ea4fdc5221d41d09588a
 vendor/lib64/libqti-perfd-client.so|cd3def30b6d444430ea8cea8956623d9d165eb7a
+vendor/lib/vendor.qti.hardware.perf@2.2.so
+vendor/lib64/vendor.qti.hardware.perf@2.2.so
 
 # Postprocessing
 vendor/bin/hw/vendor.display.color@1.0-service
