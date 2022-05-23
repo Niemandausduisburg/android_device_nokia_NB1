@@ -320,8 +320,6 @@ on post-fs-data
     # Create /data/time folder for time-services
     mkdir /data/vendor/time/ 0700 system system
 
-    setprop vold.post_fs_data_done 1
-
     #Create a folder for SRS to be able to create a usercfg file
     #mkdir /data/data/media 0770 media media
 
@@ -386,6 +384,10 @@ on post-fs-data
     # NFC storage
     mkdir /data/vendor/nfc 0770 nfc nfc
     mkdir /data/vendor/nfc/param 0770 nfc nfc
+
+    # keep that at the end of on post-fs-data
+    # Set indication (checked by vold) that we have finished this action
+    setprop vold.post_fs_data_done 1
 
 service qcomsysd /system/vendor/bin/qcom-system-daemon
     class main
