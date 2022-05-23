@@ -442,6 +442,9 @@ PRODUCT_PACKAGES += \
     librmnetctl
 
 # Recovery
+PRODUCT_PACKAGES += \
+    librecovery_updater_nokia
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:root/init.recovery.qcom.rc
 
