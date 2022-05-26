@@ -1,3 +1,5 @@
 set_prop(hal_camera_default, vendor_camera_prop)
 get_prop(hal_camera_default, bootanim_system_prop);
+
 allow hal_camera_default diag_device:chr_file rw_file_perms;
+allow hal_camera_default sysfs_laser:file w_file_perms;
