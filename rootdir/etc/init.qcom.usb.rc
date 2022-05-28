@@ -1614,41 +1614,55 @@ on property:sys.usb.config=mtp && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x2e04
     write /config/usb_gadget/g1/idProduct 0xc025
 
+on property:sys.usb.config=mtp && property:vendor.usb.use_ffs_mtp=1 && property:sys.usb.configfs=1
+    symlink /config/usb_gadget/g1/functions/ffs.mtp /config/usb_gadget/g1/configs/b.1/f1
+
 on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x2e04
     write /config/usb_gadget/g1/idProduct 0xc026
+
+on property:sys.usb.config=mtp,adb && property:vendor.usb.use_ffs_mtp=1 && property:sys.usb.configfs=1
+    symlink /config/usb_gadget/g1/functions/ffs.mtp /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
 
 on property:sys.usb.config=ptp && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x2e04
     write /config/usb_gadget/g1/idProduct 0xc029
 
+on property:sys.usb.config=ptp && property:vendor.usb.use_ffs_mtp=1 && property:sys.usb.configfs=1
+    symlink /config/usb_gadget/g1/functions/ffs.ptp /config/usb_gadget/g1/configs/b.1/f1
+
 on property:sys.usb.config=ptp,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x2e04
     write /config/usb_gadget/g1/idProduct 0xc02a
 
+on property:sys.usb.config=ptp,adb && property:vendor.usb.use_ffs_mtp=1 && property:sys.usb.configfs=1
+    symlink /config/usb_gadget/g1/functions/ffs.ptp /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
+
 on property:sys.usb.config=accessory && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x18d1
-    write /config/usb_gadget/g1/idProduct 0x2d00
-
-on property:sys.usb.config=accessory,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x18d1
-    write /config/usb_gadget/g1/idProduct 0x2d01
-
-on property:sys.usb.config=audio_source && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x18d1
     write /config/usb_gadget/g1/idProduct 0x2d02
 
-on property:sys.usb.config=audio_source,adb && property:sys.usb.configfs=1
+on property:sys.usb.config=accessory,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x18d1
     write /config/usb_gadget/g1/idProduct 0x2d03
 
-on property:sys.usb.config=accessory,audio_source && property:sys.usb.configfs=1
+on property:sys.usb.config=audio_source && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x18d1
     write /config/usb_gadget/g1/idProduct 0x2d04
 
-on property:sys.usb.config=accessory,audio_source,adb && property:sys.usb.configfs=1
+on property:sys.usb.config=audio_source,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x18d1
     write /config/usb_gadget/g1/idProduct 0x2d05
+
+on property:sys.usb.config=accessory,audio_source && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/idVendor 0x18d1
+    write /config/usb_gadget/g1/idProduct 0x905a
+
+on property:sys.usb.config=accessory,audio_source,adb && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/idVendor 0x18d1
+    write /config/usb_gadget/g1/idProduct 0x905b
 
 on property:sys.usb.config=midi && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x2e04
