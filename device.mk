@@ -459,7 +459,6 @@ PRODUCT_PACKAGES += \
     init.qti.fm.sh \
     init.qti.ims.sh \
     init.nb1.camera.rc \
-    init.nb1.poweroff_charging.rc \
     init.nb1.target.rc \
     init.qcom.rc \
     init.qcom.usb.rc \
