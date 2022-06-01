@@ -20,3 +20,6 @@ set_prop(hal_power_default, vendor_power_prop)
 
 # To dump
 allow hal_power_default cgroup:file rw_file_perms;
+
+# Hide dac_override spam
+dontaudit hal_power_default self:capability dac_override;
