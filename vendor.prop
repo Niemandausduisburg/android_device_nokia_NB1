@@ -139,15 +139,6 @@ ro.hwui.text_small_cache_height=1024
 ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=4096
 
-# IMS
-persist.dbg.ims_volte_enable=1
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
-persist.ims.enableADBLogs=1
-persist.ims.enableDebugLogs=1
-persist.data.iwlan.enable=true
-
 # Media
 vidc.enc.dcvs.extra-buff-count=2
 debug.stagefright.omx_default_rank.sw-audio=1
@@ -158,15 +149,13 @@ media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Radio
-persist.vendor.radio.add_power_save=1
+persist.vendor.radio.enableadvancedscan=false
 persist.vendor.radio.apm_sim_not_pwdn=1
-persist.vendor.radio.custom_ecc=1
-persist.vendor.radio.enableadvancedscan=0
-persist.vendor.radio.lte_vrte_ltd=1
-persist.vendor.radio.rat_on=combine
 persist.vendor.radio.sib16_support=1
+persist.vendor.radio.custom_ecc=1
+persist.vendor.radio.rat_on=combine
 persist.vendor.radio.procedure_bytes=SKIP
-persist.vendor.radio.mt_sms_ack=30
+ro.telephony.iwlan_operation_mode=legacy
 vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 
 # RmNet Data
