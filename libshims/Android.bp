@@ -41,11 +41,3 @@ cc_library_shared {
         "libgui_vendor"
     ]
 }
-
-// lib-imsvt
-cc_library_shared {
-    name: "libshim-imsvt",
-    srcs: ["lib-imsvt.cpp"],
-    compile_multilib: "both",
-    system_ext_specific: true,
-}
