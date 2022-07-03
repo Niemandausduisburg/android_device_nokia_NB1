@@ -17,5 +17,6 @@ type proc_fih, fs_type, proc_type;
 # Sysfs
 type sysfs_iio, sysfs_type, fs_type;
 type sysfs_ois, sysfs_type, fs_type;
+type sysfs_range, sysfs_type, fs_type;
 type sysfs_msm_subsys, fs_type, sysfs_type;
 type sysfs_usb_device, sysfs_type, fs_type;
