@@ -1,3 +1,6 @@
+# Audio
+persist.sys.PreventPowerkey                 u:object_r:vendor_audio_prop:s0
+
 # Camera
 camera.                                     u:object_r:vendor_camera_prop:s0
 ro.camera.                                  u:object_r:vendor_camera_prop:s0
