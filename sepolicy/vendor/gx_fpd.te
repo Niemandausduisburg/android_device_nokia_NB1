@@ -37,7 +37,7 @@ allow gx_fpd property_socket:sock_file write;
 r_dir_file(gx_fpd, firmware_file)
 
 # Allow read to vendor props
-get_prop(gx_fpd, vendor_default_prop)
+set_prop(gx_fpd, vendor_default_prop)
 
 # Ignore all logging requests
 dontaudit gx_fpd storage_file:dir search;
