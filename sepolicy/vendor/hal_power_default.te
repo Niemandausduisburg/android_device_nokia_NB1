@@ -23,3 +23,6 @@ allow hal_power_default cgroup:file rw_file_perms;
 
 # Hide dac_override spam
 dontaudit hal_power_default self:capability dac_override;
+
+# /dev/socket/pps
+allow hal_power_default mm-pp-daemon:unix_stream_socket connectto;
