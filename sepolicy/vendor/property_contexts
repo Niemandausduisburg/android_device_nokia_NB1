@@ -20,8 +20,5 @@ persist.enable.esd                      u:object_r:vendor_fingerprint_prop:s0
 # Sensors
 persist.pressure.diff                   u:object_r:vendor_default_prop:s0
 
-# Radio
-gsm.operator.numeric                    u:object_r:exported_system_prop:s0
-
 # Power
 vendor.powerhal.                        u:object_r:vendor_power_prop:s0
