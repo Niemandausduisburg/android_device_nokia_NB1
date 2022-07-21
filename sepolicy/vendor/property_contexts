@@ -11,11 +11,11 @@ vendor.camera.skip_unconfigure.packagelist  u:object_r:vendor_camera_prop:s0
 sdm.disable_hdr_lut_gen                 u:object_r:vendor_display_prop:s0
 
 # Fingerprint
-sys.gxfp.                               u:object_r:vendor_default_prop:s0
-ro.template.count                       u:object_r:vendor_default_prop:s0
-sys.fih.fingerprint                     u:object_r:vendor_default_prop:s0
-sys.fp.vid                              u:object_r:vendor_default_prop:s0
-persist.enable.esd                      u:object_r:vendor_default_prop:s0
+sys.gxfp.                               u:object_r:vendor_fingerprint_prop:s0
+ro.template.count                       u:object_r:vendor_fingerprint_prop:s0
+sys.fih.fingerprint                     u:object_r:vendor_fingerprint_prop:s0
+sys.fp.vid                              u:object_r:vendor_fingerprint_prop:s0
+persist.enable.esd                      u:object_r:vendor_fingerprint_prop:s0
 
 # Sensors
 persist.pressure.diff                   u:object_r:vendor_default_prop:s0

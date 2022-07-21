@@ -1,5 +1,8 @@
 # Camera
 vendor_public_prop(vendor_camera_prop);
 
+# Fingerprint
+vendor_internal_prop(vendor_fingerprint_prop);
+
 # Power
 vendor_internal_prop(vendor_power_prop);
