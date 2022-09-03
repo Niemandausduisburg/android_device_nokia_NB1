@@ -114,7 +114,9 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     android.hardware.camera.provider@2.5 \
-    vendor.qti.hardware.camera.device@1.0
+    vendor.qti.hardware.camera.device@1.0 \
+    android.frameworks.displayservice@1.0.vendor \
+
 
 PRODUCT_PACKAGES += \
     camera.msm8998 \
@@ -489,7 +491,8 @@ PRODUCT_COPY_FILES += \
 # Shims
 PRODUCT_PACKAGES += \
     libshim_binder \
-    libshim_gui
+    libshim_gui \
+    libcamshim
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
