@@ -50,6 +50,9 @@ persist.sys.sf.disable_blurs=1
 ro.surface_flinger.supports_background_blur=1
 ro.sf.blurs_are_expensive=1
 
+# Encryption
+ro.crypto.volume.contents_mode=aes-256-xts
+
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
 
