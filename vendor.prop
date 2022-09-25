@@ -76,6 +76,7 @@ bluetooth.hardware.power.idle_cur_ma=36
 bluetooth.hardware.power.operating_voltage_mv=3700
 bluetooth.hardware.power.rx_cur_ma=20
 bluetooth.hardware.power.tx_cur_ma=3
+bluetooth.device.default_name=Nokia 8
 persist.vendor.bt.aac_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.enable.splita2dp=true
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
