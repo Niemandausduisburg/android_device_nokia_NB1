@@ -155,7 +155,9 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libqdMetaData \
     libqdMetaData.system \
-    libqdMetaData.vendor
+    libqdMetaData.vendor \
+    libsdmcore \
+    libsdmutils
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
