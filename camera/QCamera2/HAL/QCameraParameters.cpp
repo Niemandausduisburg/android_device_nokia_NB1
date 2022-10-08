@@ -769,7 +769,7 @@ const QCameraParameters::QCameraMap<cam_antibanding_mode_type>
 const QCameraParameters::QCameraMap<cam_iso_mode_type>
         QCameraParameters::ISO_MODES_MAP[] = {
     { ISO_AUTO,  CAM_ISO_MODE_AUTO },
-    { ISO_HJR,   CAM_ISO_MODE_DEBLUR },
+    { ISO_HJR,   CAM_ISO_MODE_AUTO },
     { ISO_100,   CAM_ISO_MODE_100 },
     { ISO_200,   CAM_ISO_MODE_200 },
     { ISO_400,   CAM_ISO_MODE_400 },
@@ -4482,6 +4482,60 @@ int32_t QCameraParameters::setTsMakeup(const QCameraParameters& params)
     return NO_ERROR;
 }
 
+/*===========================================================================
+ * FUNCTION   : setXmMakeup
+ *
+ * DESCRIPTION: set setXmMakeup from user setting
+ *
+ * PARAMETERS :
+ *   @params  : user setting parameters
+ *
+ * RETURN     : int32_t type of status
+ *              NO_ERROR  -- success
+ *              none-zero failure code
+ *==========================================================================*/
+int32_t QCameraParameters::setXmMakeup(const QCameraParameters& params)
+{
+    const char *str = params.get(KEY_XM_MAKEUP);
+    const char *prev_str = get(KEY_XM_MAKEUP);
+
+    LOGH("str =%s & prev_str =%s", str, prev_str);
+
+    if (str != NULL) {
+        if (prev_str == NULL) {
+            m_bNeedRestart = true;
+            set(KEY_XM_MAKEUP, str);
+        } else if (strcmp(str, prev_str) != 0) {
+            const char* prev_enabled = strrchr(prev_str, ':');
+            const char* curr_enabled = strrchr(str, ':');
+            if (prev_enabled && curr_enabled) {
+                prev_enabled++;
+                curr_enabled++;
+                m_bNeedRestart = (atoi(prev_enabled) > 0 != atoi(curr_enabled) > 0) ?
+                        true : m_bNeedRestart;
+            }
+            set(KEY_XM_MAKEUP, str);
+        }
+
+        str = params.get(KEY_XM_MAKEUP_WHITEN);
+        prev_str = get(KEY_XM_MAKEUP_WHITEN);
+        if (str != NULL) {
+            if (prev_str == NULL || strcmp(str, prev_str) != 0) {
+                set(KEY_XM_MAKEUP_WHITEN, str);
+            }
+        }
+
+        str = params.get(KEY_XM_MAKEUP_CLEAN);
+        prev_str = get(KEY_XM_MAKEUP_CLEAN);
+        if (str != NULL) {
+            if (prev_str == NULL || strcmp(str, prev_str) != 0) {
+                set(KEY_XM_MAKEUP_CLEAN, str);
+            }
+        }
+    }
+
+    return NO_ERROR;
+}
 #endif
 
 /*===========================================================================
@@ -6200,7 +6254,7 @@ int32_t QCameraParameters::initDefaultParameters()
             AUTO_EXPOSURE_MAP,
             PARAM_MAP_SIZE(AUTO_EXPOSURE_MAP));
     set(KEY_QC_SUPPORTED_AUTO_EXPOSURE, autoExposureValues.string());
-    setAutoExposure(AUTO_EXPOSURE_FRAME_AVG);
+    setAutoExposure(AUTO_EXPOSURE_CENTER_WEIGHTED);
 
     // Set Exposure Compensation
     set(KEY_MAX_EXPOSURE_COMPENSATION, m_pCapability->exposure_compensation_max); // 12
@@ -6232,7 +6286,7 @@ int32_t QCameraParameters::initDefaultParameters()
             ANTIBANDING_MODES_MAP,
             PARAM_MAP_SIZE(ANTIBANDING_MODES_MAP));
     set(KEY_SUPPORTED_ANTIBANDING, antibandingValues);
-    setAntibanding(ANTIBANDING_OFF);
+    setAntibanding(ANTIBANDING_AUTO);
 
     // Set Effect
     String8 effectValues = createValuesString(
@@ -7226,6 +7280,16 @@ int32_t QCameraParameters::setPreviewFpsRange(int min_fps,
     /*This property get value should be the fps that user needs*/
     property_get("persist.vendor.debug.set.fixedfps", value, "0");
     fixedFpsValue = atoi(value);
+
+    // Workaround backend AEC bug that doesn't set high enough ISO values when the min FPS value
+    // is higher than expected, which resulted in a very dark preview in low light conditions
+    // while recording. The lowest FPS value AEC expects in such conditions is 19.99, so 15fps
+    // as the min FPS value should be sufficient.
+    // Don't allow function callers to request min fps same as max fps
+    if (max_fps >= 24000 && min_fps == max_fps) {
+        LOGH("min_fps %d same as max_fps %d, setting min_fps to 7000", min_fps, max_fps);
+        min_fps = 7000;
+    }
 
     LOGD("E minFps = %d, maxFps = %d , vid minFps = %d, vid maxFps = %d",
                  min_fps, max_fps, vid_min_fps, vid_max_fps);

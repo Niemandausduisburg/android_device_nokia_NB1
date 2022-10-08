@@ -22,7 +22,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
     android.hardware.audio.service \
     android.hardware.audio.effect@5.0-impl \
-    android.hardware.soundtrigger@2.1-impl
 
 PRODUCT_PACKAGES += \
     audio.r_submix.default \
@@ -62,7 +61,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/qcom-caf/audio/configs/msm8998/audio_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer.txt \
     $(LOCAL_PATH)/qcom-caf/audio/configs/msm8998/audio_tuning_mixer_tavil.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer_tavil.txt
 
-# Adapt Launch 
+# Adapt Launch
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/lm/AdaptLaunchFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/AdaptLaunchFeature.xml \
 
@@ -77,9 +76,9 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.a2dp@1.0.vendor \
     android.hardware.bluetooth@1.0.vendor \
     android.hardware.bluetooth@1.1.vendor \
-    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.bluetooth.audio@2.1-impl:32 \
+    android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
-    Bluetooth \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor:32 \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor:32 \
@@ -88,8 +87,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0 \
     vendor.qti.hardware.btconfigstore@2.0.vendor:32 \
-    vendor.qti.hardware.btconfigstore@2.0.vendor \
-    libldacBT_bco
+    vendor.qti.hardware.btconfigstore@2.0.vendor
 
 # Boot control
 PRODUCT_PACKAGES += \
@@ -103,25 +101,30 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
-
-# Camera
-# PRODUCT_PACKAGES += \
-#    GCamGOPrebuilt
-
+    
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0_32 \
     android.hardware.camera.common@1.0 \
-    android.hardware.camera.device@3.4 \
-    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.device@3.3:64 \
+    android.hardware.camera.device@3.4:64 \
+    android.hardware.camera.device@3.5:64 \
+    android.hardware.camera.provider@2.4 \
+    android.hardware.camera.provider@2.4-impl:32 \
     android.hardware.camera.provider@2.4-service \
-    android.hardware.camera.provider@2.5 \
-    vendor.qti.hardware.camera.device@1.0
+    android.hardware.camera.provider@2.5:64 \
+    android.hardware.camera.provider@2.6:64 \
+    vendor.qti.hardware.camera.device@1.0 \
 
 PRODUCT_PACKAGES += \
     camera.msm8998 \
+    libcamshim \
+    libui_shim \
     libmm-qcamera \
     mm-qcamera-app \
     libhal_dbg
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.CDS=off
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -136,11 +139,6 @@ PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
     system/core/libprocessgroup/profiles/task_profiles_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
-# Component overrides
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml \
-    $(LOCAL_PATH)/configs/component-overrides-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides.xml
-
 # Display
 PRODUCT_PACKAGES += \
     gralloc.msm8998 \
@@ -154,7 +152,9 @@ PRODUCT_PACKAGES += \
     libtinyxml.vendor \
     libqdMetaData \
     libqdMetaData.system \
-    libqdMetaData.vendor
+    libqdMetaData.vendor \
+    libsdmcore \
+    libsdmutils
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -189,7 +189,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4 \
     android.hardware.drm@1.4.vendor \
-    android.hardware.drm@1.4-service.clearkey
+    android.hardware.drm-service.clearkey
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -214,7 +214,9 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.base@1.0.vendor \
     android.hidl.manager@1.0 \
-    android.hidl.manager@1.0.vendor
+    android.hidl.manager@1.0.vendor \
+    android.hidl.allocator@1.0 \
+    android.hidl.allocator@1.0.vendor
 
 PRODUCT_PACKAGES += \
     libhidltransport \
@@ -491,7 +493,8 @@ PRODUCT_COPY_FILES += \
 # Shims
 PRODUCT_PACKAGES += \
     libshim_binder \
-    libshim_gui
+    libshim_gui \
+    libcamshim
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -572,6 +575,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vndk_package \
     libstdc++.vendor
+
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libhidlbase.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhidlbase-v32.so
 
 # Wifi
 PRODUCT_PACKAGES += \

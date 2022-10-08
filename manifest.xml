@@ -31,20 +31,20 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.bluetooth.audio</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>IBluetoothAudioProvidersFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.boot</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IBootControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.bluetooth.audio</name>
+        <transport>hwbinder</transport>
+        <version>2.1</version>
+        <interface>
+            <name>IBluetoothAudioProvidersFactory</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -192,15 +192,6 @@
         </interface>
         <interface>
             <name>ISensorManager</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.soundtrigger</name>
-        <transport>hwbinder</transport>
-        <version>2.1</version>
-        <interface>
-            <name>ISoundTriggerHw</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -483,7 +474,7 @@
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.ims</name>
         <transport>hwbinder</transport>
-        <version>1.6</version>
+        <version>1.7</version>
         <interface>
             <name>IImsRadio</name>
             <instance>imsradio0</instance>

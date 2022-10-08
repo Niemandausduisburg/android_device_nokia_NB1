@@ -16,9 +16,6 @@ ro.bluetooth.a2dp_offload.supported=true
 ro.bluetooth.emb_wp_mode=true
 ro.bluetooth.library_name=libbluetooth_qti.so
 
-# BPF
-ro.kernel.ebpf.supported=true
-
 # Camera
 camera.disable_zsl_mode=1
 camera.mono_only=1
@@ -39,6 +36,8 @@ persist.vendor.data.mode=concurrent
 
 # Display
 debug.gralloc.enable_fb_ubwc=1
+debug.sf.enable_hwc_vds=0
+debug.sf.disable_hwc_overlays=1
 debug.renderengine.backend=threaded
 debug.sf.hw=1
 ro.vendor.display.cabl=2
@@ -46,11 +45,6 @@ sdm.debug.disable_skip_validate=1
 sdm.perf_hint_window=50
 debug.hwui.renderer=skiagl
 renderthread.skia.reduceopstasksplitting=true
-
-# Display - Blur
-persist.sys.sf.disable_blurs=1
-ro.surface_flinger.supports_background_blur=1
-ro.sf.blurs_are_expensive=1
 
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
@@ -71,6 +65,7 @@ ro.telephony.call_ring.multiple=false
 ro.telephony.default_network=22,20
 telephony.lteOnCdmaDevice=1
 vendor.service.qti.ims.enabled=1
+persist.sys.fflag.override.settings_provider_model=false
 
 # SurfaceFlinger
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
@@ -99,3 +94,27 @@ persist.dbg.wfc_avail_ovr=1
 
 # Zygote
 persist.device_config.runtime_native.usap_pool_enabled=true
+
+# Disable MTE Async for system server
+arm64.memtag.process.system_server=off
+
+# Seamless transfer
+sys.fflag.override.settings_seamless_transfer=true
+
+# Increase scroll smoothness 
+ro.vendor.qti.cgroup_follow.enable=true
+persist.vendor.qti.inputopts.enable=true
+persist.vendor.qti.inputopts.movetouchslop=0.6
+ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
+
+# Increase RAM managment
+ro.config.fha_enable=true
+ro.sys.fw.bg_apps_limit=32
+ro.config.dha_cached_max=16
+ro.config.dha_empty_max=42
+ro.config.dha_empty_init=32
+ro.config.dha_lmk_scale=0.545
+ro.config.dha_th_rate=2.3
+ro.config.sdha_apps_bg_max=64
+ro.config.sdha_apps_bg_min=8
+

@@ -293,14 +293,14 @@ const QCamera3HardwareInterface::QCameraMap<
     { ANDROID_LENS_STATE_MOVING,        CAM_AF_LENS_STATE_MOVING}
 };
 
-const int32_t available_thumbnail_sizes[] = {0, 0,
-                                             176, 144,
+const int32_t available_thumbnail_sizes[] = {176, 144,
                                              240, 144,
                                              256, 144,
                                              240, 160,
                                              256, 154,
                                              240, 240,
-                                             320, 240};
+                                             320, 240,
+                                               0, 0  };
 
 const QCamera3HardwareInterface::QCameraMap<
         camera_metadata_enum_android_sensor_test_pattern_mode_t,
@@ -4021,6 +4021,7 @@ void QCamera3HardwareInterface::handleMetadataWithLock(
                     i->capture_intent, internalPproc, i->fwkCacMode,
                     firstMetadataInBatch);
             result.result = restoreHdrScene(i->scene_mode, result.result);
+            saveExifParams(metadata);
 
             if (i->blob_request) {
                 {
@@ -4578,7 +4579,7 @@ int32_t QCamera3HardwareInterface::orchestrateRequest(
         int32_t expCompensation = hdr_exp_values;
         uint8_t aeLock = 1;
         modified_meta.update(ANDROID_CONTROL_AE_EXPOSURE_COMPENSATION, &expCompensation, 1);
-        modified_meta.update(ANDROID_CONTROL_AE_LOCK, &aeLock, 1);
+        //modified_meta.update(ANDROID_CONTROL_AE_LOCK, &aeLock, 1);
         camera_metadata_t *modified_settings = modified_meta.release();
         request->settings = modified_settings;
 
@@ -4599,7 +4600,7 @@ int32_t QCamera3HardwareInterface::orchestrateRequest(
         expCompensation = hdr_exp_values;
         aeLock = 1;
         modified_meta.update(ANDROID_CONTROL_AE_EXPOSURE_COMPENSATION, &expCompensation, 1);
-        modified_meta.update(ANDROID_CONTROL_AE_LOCK, &aeLock, 1);
+        //modified_meta.update(ANDROID_CONTROL_AE_LOCK, &aeLock, 1);
         modified_settings = modified_meta.release();
         request->settings = modified_settings;
 
@@ -4637,7 +4638,7 @@ int32_t QCamera3HardwareInterface::orchestrateRequest(
         expCompensation = hdr_exp_values;
         aeLock = 1;
         modified_meta.update(ANDROID_CONTROL_AE_EXPOSURE_COMPENSATION, &expCompensation, 1);
-        modified_meta.update(ANDROID_CONTROL_AE_LOCK, &aeLock, 1);
+        //modified_meta.update(ANDROID_CONTROL_AE_LOCK, &aeLock, 1);
         modified_settings = modified_meta.release();
         request->settings = modified_settings;
 
@@ -6289,6 +6290,7 @@ no_error:
         if (channel == NULL) {
             LOGE("invalid channel pointer for stream");
             assert(0);
+            pthread_mutex_unlock(&mMutex);
             return BAD_VALUE;
         }
 
@@ -6352,6 +6354,7 @@ no_error:
         } else {
             LOGE("Internal requests not supported on this stream type");
             assert(0);
+            pthread_mutex_unlock(&mMutex);
             return INVALID_OPERATION;
         }
         latestRequest->internalRequestList.push_back(requestedStream);
@@ -9520,8 +9523,14 @@ int QCamera3HardwareInterface::initStaticMetadata(uint32_t cameraId)
     staticInfo.update(ANDROID_SENSOR_INFO_WHITE_LEVEL,
             &gCamCapability[cameraId]->white_level, 1);
 
-    staticInfo.update(ANDROID_SENSOR_BLACK_LEVEL_PATTERN,
-            gCamCapability[cameraId]->black_level_pattern, BLACK_LEVEL_PATTERN_CNT);
+    if(facingBack && gCamCapability[cameraId]->black_level_pattern[0] < 16) {
+        int32_t black_level_pattern_custom[BLACK_LEVEL_PATTERN_CNT] = {32,32,32,32};
+        staticInfo.update(ANDROID_SENSOR_BLACK_LEVEL_PATTERN,
+                black_level_pattern_custom, BLACK_LEVEL_PATTERN_CNT);
+    } else {
+        staticInfo.update(ANDROID_SENSOR_BLACK_LEVEL_PATTERN,
+                gCamCapability[cameraId]->black_level_pattern, BLACK_LEVEL_PATTERN_CNT);
+    }
 
 #ifndef USE_HAL_3_3
     bool hasBlackRegions = false;

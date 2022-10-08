@@ -129,7 +129,12 @@
         <item>"/apex/com.android.media/javalib/updatable-media.jar"</item>
         <item>"/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
         <item>"/system/bin/surfaceflinger"</item>
+
     </string-array>
+
+    <!-- Whether or not wcg (wide color gamut) should be enabled on this device,
+          we only enabled it while the device has ability of mixed color spaces composition -->
+    <bool name="config_enableWcgMode">true</bool>
 
     <!-- Should the pinner service pin the Camera application? -->
      <bool name="config_pinnerCameraApp">false</bool>
@@ -163,6 +168,12 @@
     <!-- True if the device supports Sustained Performance Mode-->
      <bool name="config_sustainedPerformanceModeSupported">true</bool>
 
+    <!-- Flag indicating whether the surfaceflinger has limited
+         alpha compositing functionality in hardware.  If set, the window
+         manager will disable alpha trasformation in animations where not
+         strictly needed. -->
+    <bool name="config_sf_limitedAlpha">true</bool>
+
     <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
      <bool name="config_swipe_up_gesture_setting_available">false</bool>
 
@@ -181,6 +192,11 @@
     <!-- Enable video pause workaround when enabling/disabling the camera. -->
      <bool name="config_useVideoPauseWorkaround">true</bool>
 
+    <!-- Enables or disables haptic effect when the text insertion/selection handle is moved
+          manually by the user. Off by default, since the expected haptic feedback may not be
+          available on some devices. -->
+    <bool name="config_enableHapticTextHandle">true</bool>
+
     <!-- Set to true if the wifi display supports compositing content stored
          in gralloc protected buffers.  For this to be true, there must exist
          a protected hardware path for surface flinger to composite and send
@@ -196,6 +212,11 @@
     <!-- Boolean indicating if restoring network selection should be skipped -->
     <!-- The restoring is handled by modem if it is true-->
      <bool name="skip_restoring_network_selection">true</bool>
+
+    <!-- Enables or disables fading edges when marquee is enabled in TextView.
+         Off by default, since the framebuffer readback used to implement the
+         fading edges is prohibitively expensive on most GPUs. -->
+    <bool name="config_ui_enableFadingMarquee">true</bool>
 
     <!-- Height of the status bar -->
      <dimen name="status_bar_height_portrait">24.0dip</dimen>
@@ -225,8 +246,13 @@
          when adapting to brighter or darker environments.  This parameter controls how quickly
          brightness changes occur in response to an observed change in light level that exceeds the
          hysteresis threshold. -->
-     <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
-     <integer name="config_autoBrightnessDarkeningLightDebounce">5000</integer>
+     <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
+     <integer name="config_autoBrightnessDarkeningLightDebounce">2000</integer>
+
+     <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
+     For this time after the screen turns on, the Power Manager
+     will not debounce light sensor readings -->
+     <integer name="config_lightSensorWarmupTime">200</integer>
 
     <!-- Operating volatage for bluetooth controller. 0 by default-->
      <integer name="config_bluetooth_operating_voltage_mv">3300</integer>
@@ -381,6 +407,19 @@
         <item>9</item>
     </integer-array>
 
+    <!-- Night display color temperature calibration -->
+    <string-array name="config_nightDisplayColorTemperatureCoefficients">
+        <!-- R a-coefficient --> <item>0.0</item>
+        <!-- R b-coefficient --> <item>0.0</item>
+        <!-- R y-intercept --> <item>1.0</item>
+        <!-- G a-coefficient --> <item>-0.000000014365268757</item>
+        <!-- G b-coefficient --> <item>0.000255092801250106</item>
+        <!-- G y-intercept --> <item>-0.064156942434907716</item>
+        <!-- B a-coefficient --> <item>-0.000000000910931179</item>
+        <!-- B b-coefficient --> <item>0.000207598323269139</item>
+        <!-- B y-intercept --> <item>-0.349361641294833436</item>
+    </string-array>
+
     <!-- Values for GPS configuration -->
     <string-array name="config_gpsParameters">
         <item>SUPL_HOST=supl.google.com</item>
@@ -454,6 +493,12 @@
     <!-- Enable Zram writeback feature to allow unused pages in zram be written to flash. -->
     <bool name="config_zramWriteback">true</bool>
 
+    <!-- Controls the navigation bar interaction mode:
+         0: 3 button mode (back, home, overview buttons)
+         1: 2 button mode (back, home buttons + swipe up for overview)
+         2: gestures only for back, home and overview -->
+    <integer name="config_navBarInteractionMode">0</integer>
+
      <!-- Hardware keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
          of the following keys present:
@@ -503,4 +548,45 @@
     <bool name="config_button_brightness_support">true</bool>
     <bool name="config_deviceHasVariableButtonBrightness">true</bool>
     <integer name="config_button_brightness_default">128</integer>
+
+    <!-- The list of components which should be automatically disabled for a specific device. -->
+    <string-array name="config_deviceDisabledComponents" translatable="false">
+        <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
+    </string-array>
+
+     <!-- The default value for transition animation scale found in developer settings.
+         1.0 corresponds to 1x animator scale, 0 means that there will be no transition
+         animations. Note that this is only a default and will be overridden by a
+         user-set value if toggled by settings so the "Transition animation scale" setting
+         should also be hidden if intended to be permanent. -->
+    <item name="config_appTransitionAnimationDurationScaleDefault" format="float" type="dimen">1.1</item>
+
+    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
+         in hardware for individual layers. -->
+    <bool name="config_setColorTransformAcceleratedPerLayer">true</bool>
+
+    <!-- Maximum color temperature, in Kelvin, supported by Night display.
+         Setting this to track the default color temperature value (currently 3850K). -->
+    <integer name="config_nightDisplayColorTemperatureMax">3850</integer>
+
+    <!-- If not zero, limits the internal screen recorder's framerate to the set value. -->
+    <integer name="config_screenRecorderMaxFramerate">60</integer>
+
+    <!-- If not empty, sets the AVC codec profile level used for the internal screen recorder.
+         Possible values: 3, 3.1, 3.2, 4, 4.1, 4.2
+    -->
+    <string name="config_screenRecorderAVCProfileLevel" translatable="false">3.2</string>
+
+    <!-- Delay that allows some content to arrive at the display before switching
+         from DOZE to ON, in millis. -->
+    <integer name="config_wakeUpDelayDoze">32</integer>
+
+    <!-- List supported color modes. -->
+    <integer-array name="config_availableColorModes">
+        <item>0</item> <!-- COLOR_MODE_NATURAL -->
+        <item>1</item> <!-- COLOR_MODE_BOOSTED -->
+        <item>2</item> <!-- COLOR_MODE_SATURATED -->
+        <item>3</item> <!-- COLOR_MODE_AUTOMATIC -->
+    </integer-array>
+
 </resources>
