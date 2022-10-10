@@ -101,7 +101,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
-    
+
+# Camera
+PRODUCT_PACKAGES += \
+    GoogleCameraGo
+
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0_32 \
     android.hardware.camera.common@1.0 \
