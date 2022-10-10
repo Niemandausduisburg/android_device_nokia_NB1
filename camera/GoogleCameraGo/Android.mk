@@ -1,0 +1,13 @@
+LOCAL_PATH := $(call my-dir)
+
+# Google Camera Go
+include $(CLEAR_VARS)
+LOCAL_MODULE := GoogleCameraGo
+LOCAL_SRC_FILES := priv-app/GoogleCameraGo/GoogleCameraGo.apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_PRIVILEGED_MODULE := true
+LOCAL_OVERRIDES_PACKAGES := Snap Camera2 Aperture
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_ENFORCE_USES_LIBRARIES := false
+LOCAL_DEX_PREOPT := false
+include $(BUILD_PREBUILT)
