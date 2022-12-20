@@ -107,6 +107,11 @@ TARGET_KERNEL_CONFIG := nb1_defconfig
 TARGET_KERNEL_SOURCE := kernel/nokia/msm8998
 TARGET_KERNEL_VERSION := 4.4
 
+TARGET_KERNEL_CLANG_VERSION := neutron
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1
+TARGET_KERNEL_ADDITIONAL_FLAGS := LD=ld.lld AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
+
 # Kernel additional flags
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
