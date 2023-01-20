@@ -92,7 +92,7 @@ LOC_HIDL_VERSION := 4.0
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 sched_enable_hmp=0 sched_enable_power_aware=1
 BOARD_KERNEL_CMDLINE += service_locator.enable=1 swiotlb=2048 androidboot.configfs=true
-BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3 loop.max_part=7
+BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3 loop.max_part=7 kpti=off
 BOARD_KERNEL_CMDLINE += androidboot.fstab_suffix=qcom
 BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/1da4000.ufshc
 BOARD_KERNEL_BASE := 0x00000000
