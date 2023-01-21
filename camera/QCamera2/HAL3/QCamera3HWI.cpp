@@ -3493,8 +3493,8 @@ void QCamera3HardwareInterface::handleBatchMetadata(
 {
     ATRACE_CAMSCOPE_CALL(CAMSCOPE_HAL3_HANDLE_BATCH_METADATA);
 
-    if (NULL == metadata_buf) {
-        LOGE("metadata_buf is NULL");
+    if ((NULL == metadata_buf) || (ERROR == mState)) {
+        LOGE("metadata_buf is NULL or return when mState is error");
         return;
     }
     /* In batch mode, the metdata will contain the frame number and timestamp of
