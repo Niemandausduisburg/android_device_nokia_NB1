@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_NB1.mk
+    $(LOCAL_DIR)/spark_NB1.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_NB1-user \
-    lineage_NB1-userdebug \
-    lineage_NB1-eng
+    spark_NB1-user \
+    spark_NB1-userdebug \
+    spark_NB1-eng

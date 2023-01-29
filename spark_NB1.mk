@@ -15,15 +15,12 @@ PRODUCT_SHIPPING_API_LEVEL := 27
 TARGET_INCLUDE_WIFI_EXT := true
 TARGET_USES_AOSP_RECOVERY := true
 TARGET_BOOT_ANIMATION_RES := 1080
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/spark/config/common_full_phone.mk)
 
 # Inherit from NB1 device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# riceDroid flags
-RICE_CHIPSET := msm8998
-RICE_MAINTAINER := Niemandausduisburg
-SUSHI_BOOTANIMATION := 1080
+# Proof device as Pixel
 TARGET_USE_PIXEL_FINGERPRINT := true
 
 # Extra Google/Pixel features 
@@ -32,16 +29,9 @@ TARGET_SUPPORTS_QUICK_TAP := true
 # Build GAPPS
 ifeq ($(BUILD_GAPPS),true)
 WITH_GMS := true
-TARGET_CORE_GMS := false
-TARGET_CORE_GMS_EXTRAS := false
-TARGET_OPTOUT_GOOGLE_TELEPHONY := false
-TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := false
 endif
 
-# GrapheneOS Camera
-TARGET_BUILD_GRAPHENEOS_CAMERA := true
-
-PRODUCT_NAME := lineage_NB1
+PRODUCT_NAME := spark_NB1
 PRODUCT_DEVICE := NB1
 PRODUCT_MANUFACTURER := HMD Global
 PRODUCT_BRAND := Nokia
