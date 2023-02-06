@@ -24,7 +24,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 RICE_CHIPSET := msm8998
 RICE_MAINTAINER := Niemandausduisburg
 SUSHI_BOOTANIMATION := 1080
-TARGET_USE_PIXEL_FINGERPRINT := true
+TARGET_USE_PIXEL_FINGERPRINT := false
 
 # Extra Google/Pixel features 
 TARGET_SUPPORTS_QUICK_TAP := true
@@ -52,7 +52,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-hmd-rev2
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE=NB1 \
     PRODUCT_NAME=NB1_00WW_FIH \
-    PRIVATE_BUILD_DESC="NB1_00WW_FIH-user 9 PPR1.180610.011 00WW_5_16A release-keys"
+    PRIVATE_BUILD_DESC="TA-1004_00WW-user 8.1.0 OPR1.170623.026 00WW_4_88B release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := Nokia/NB1_00WW_FIH/NB1:9/PPR1.180610.011/00WW_5_16A:user/release-keys
+BUILD_FINGERPRINT := Nokia/TA-1004_00WW/NB1:8.1.0/OPR1.170623.026/00WW_4_88B:user/release-keys
