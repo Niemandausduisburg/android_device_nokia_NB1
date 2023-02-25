@@ -15,7 +15,7 @@ PRODUCT_SHIPPING_API_LEVEL := 27
 TARGET_INCLUDE_WIFI_EXT := true
 TARGET_USES_AOSP_RECOVERY := true
 TARGET_BOOT_ANIMATION_RES := 1080
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/syberia/config/common_full_phone.mk)
 
 # Inherit from NB1 device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -41,7 +41,7 @@ endif
 # GrapheneOS Camera
 TARGET_BUILD_GRAPHENEOS_CAMERA := true
 
-PRODUCT_NAME := lineage_NB1
+PRODUCT_NAME := syberia_NB1
 PRODUCT_DEVICE := NB1
 PRODUCT_MANUFACTURER := HMD Global
 PRODUCT_BRAND := Nokia
