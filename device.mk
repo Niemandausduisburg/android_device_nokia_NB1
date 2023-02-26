@@ -624,6 +624,10 @@ PRODUCT_PACKAGES += \
 
 #PRODUCT_BOOT_JARS += \
     WfdCommon
+    
+# Updater
+PRODUCT_PACKAGES += \
+   Updater
 
 # Inherit vendor
 $(call inherit-product, vendor/nokia/NB1/NB1-vendor.mk)
