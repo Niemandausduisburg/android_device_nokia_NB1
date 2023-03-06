@@ -137,6 +137,7 @@ debug.sf.recomputecrop=0
 debug.sf.recomputecrop=0
 debug.sf.disable_hwc=0
 debug.sf.layer_caching_active_layer_timeout_ms=1000
+debug.sf.enable_transaction_tracing=false
 debug.enable.sglscale=1
 debug.egl.hw=1
 persist.hwc.ptor.enable=true
