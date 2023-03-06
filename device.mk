@@ -116,7 +116,7 @@ PRODUCT_PACKAGES += \
     camera.msm8998 \
     libmm-qcamera \
     mm-qcamera-app \
-    libhal_dbg
+	    libhal_dbg
 
 # Charger
 PRODUCT_PACKAGES += \
