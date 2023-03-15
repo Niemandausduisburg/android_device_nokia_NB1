@@ -1,9 +1,13 @@
 # Audio
 vendor.audio_hal.period_size=192
 ro.vendor.audio.sdk.fluencetype=fluence
+ro.qc.sdk.audio.fluencetype=fluence
 persist.vendor.audio.fluence.voicecall=true
-persist.vendor.audio.fluence.voicerec=true
+persist.vendor.audio.fluence.voicerec=false
 persist.vendor.audio.fluence.speaker=true
+persist.vendor.audio.dualmic.config=endfire
+persist.vendor.audio.fluence.audiorec=false
+persist.vendor.audio.fluence.voicecomm=true
 vendor.audio.tunnel.encode=false
 persist.vendor.audio.ras.enabled=false
 vendor.audio.offload.buffer.size.kb=256
