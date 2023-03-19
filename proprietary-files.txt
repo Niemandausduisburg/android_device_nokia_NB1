@@ -120,14 +120,6 @@ vendor/lib64/btaudio_offload_if.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
 
-# Bluetooth (AptX)
--app/aptxals/aptxals.apk
-lib64/libaptXHD_encoder.so
-lib64/libaptX_encoder.so
--product/overlay/aptxalsOverlay.apk
-vendor/lib64/libaptXHD_encoder.so
-vendor/lib64/libaptX_encoder.so
-
 # CDSP
 vendor/bin/cdsprpcd
 vendor/lib/libcdsprpc.so
