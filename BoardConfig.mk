@@ -55,15 +55,11 @@ BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
 
 # Camera
 MALLOC_SVELTE_FOR_LIBC32 := true
-USE_DEVICE_SPECIFIC_CAMERA := true
 DEVICE_SPECIFIC_CAMERA_PATH := $(DEVICE_PATH)/camera
-TARGET_SUPPORT_HAL1 := true
-TARGET_USES_MEDIA_EXTENSIONS := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 USE_DISPLAY_SERVICE := true
 
 # Display
-BOARD_USES_ADRENO := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_SCREEN_DENSITY := 520
 TARGET_USES_GRALLOC1 := true
@@ -75,14 +71,10 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
-# Enable dexpreopt to speed boot time
-WITH_DEXPREOPT := true
-
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # FM
-BOARD_HAS_QCA_FM_SOC := cherokee
 BOARD_HAVE_QCOM_FM := true
 
 # GPS
@@ -108,6 +100,9 @@ TARGET_KERNEL_VERSION := 4.4
 # Kernel additional flags
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+
+# Malloc
+MALLOC_SVELTE := true
 
 # ART
 ART_BUILD_TARGET_NDEBUG := true
