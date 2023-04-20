@@ -1,0 +1,14 @@
+[
+  {
+    "repository": "android_kernel_nokia_msm8998",
+    "target_path": "kernel/nokia/msm8998",
+    "branch": "next-13"
+    "remote": "Niemandausduisburg"
+  },
+  {
+    "repository": "vendor_nokia_NB1",
+    "target_path": "vendor/nokia/NB1",
+    "branch": "twelve-thirteen",
+    "remote": "Niemandausduisburg"
+  }
+]

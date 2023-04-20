@@ -21,25 +21,12 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # riceDroid flags
-RICE_CHIPSET := msm8998
-RICE_MAINTAINER := Niemandausduisburg
-SUSHI_BOOTANIMATION := 1080
+RISING_CHIPSET := msm8998
+RISING_MAINTAINER := Niemandausduisburg
 TARGET_USE_PIXEL_FINGERPRINT := false
 
 # Extra Google/Pixel features 
 TARGET_SUPPORTS_QUICK_TAP := true
-
-# Build GAPPS
-ifeq ($(BUILD_GAPPS),true)
-WITH_GMS := true
-TARGET_CORE_GMS := false
-TARGET_CORE_GMS_EXTRAS := false
-TARGET_OPTOUT_GOOGLE_TELEPHONY := false
-TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := false
-endif
-
-# GrapheneOS Camera
-TARGET_BUILD_GRAPHENEOS_CAMERA := true
 
 PRODUCT_NAME := lineage_NB1
 PRODUCT_DEVICE := NB1
