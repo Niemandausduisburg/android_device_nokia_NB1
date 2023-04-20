@@ -22,6 +22,9 @@ RISING_CHIPSET := msm8998
 RISING_MAINTAINER := Niemandausduisburg
 TARGET_USE_PIXEL_FINGERPRINT := false
 
+# LineageOS-Camera
+TARGET_BUILD_APERTURE_CAMERA := true
+
 # Extra Google/Pixel features 
 TARGET_SUPPORTS_QUICK_TAP := true
 
