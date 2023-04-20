@@ -25,6 +25,9 @@ RISING_CHIPSET := msm8998
 RISING_MAINTAINER := Niemandausduisburg
 TARGET_USE_PIXEL_FINGERPRINT := false
 
+TARGET_EXCLUDES_APERTURE := false
+TARGET_EXCLUDES_AUDIOFX := false
+
 # Extra Google/Pixel features 
 TARGET_SUPPORTS_QUICK_TAP := true
 
