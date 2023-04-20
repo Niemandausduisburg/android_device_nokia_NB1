@@ -17,6 +17,15 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from NLA device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+# riceDroid flags
+RISING_CHIPSET := msm8998
+RISING_MAINTAINER := Niemandausduisburg
+TARGET_USE_PIXEL_FINGERPRINT := false
+RISING_PACKAGE_TYPE := AOSP
+
+# Extra Google/Pixel features 
+TARGET_SUPPORTS_QUICK_TAP := true
+
 PRODUCT_NAME := lineage_NLA
 PRODUCT_DEVICE := NLA
 PRODUCT_MANUFACTURER := HMD Global
