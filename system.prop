@@ -11,6 +11,7 @@ tunnel.decode=false
 bt.max.hfpclient.connections=1
 persist.bluetooth.a2dp_offload.disabled=true
 persist.vendor.bt.a2dp.aac_whitelist=false
+persist.vendor.qcom.bluetooth.scram.enabled=true
 ro.bluetooth.a2dp_offload.supported=true
 ro.bluetooth.emb_wp_mode=true
 ro.bluetooth.library_name=libbluetooth_qti.so
