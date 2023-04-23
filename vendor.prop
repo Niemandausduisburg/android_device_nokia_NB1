@@ -85,6 +85,9 @@ vendor.audio.feature.a2dp_offload.enable=true
 vendor.qcom.bluetooth.soc=cherokee
 ro.vendor.bluetooth.wipower=false
 
+# Bluetooth APCF extended
+bluetooth.le.disable_apcf_extended_features=1
+
 # Enhanced sco connection
 bluetooth.sco.disable_enhanced_connection=true
 
