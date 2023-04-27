@@ -43,7 +43,6 @@ debug.sf.hw=1
 debug.sf.disable_backpressure=1
 debug.hwui.renderer=skiagl
 debug.sf.auto_latch_unsignaled=true
-renderthread.skia.reduceopstasksplitting=true
 ro.vendor.display.cabl=2
 sdm.debug.disable_skip_validate=1
 sdm.perf_hint_window=50
