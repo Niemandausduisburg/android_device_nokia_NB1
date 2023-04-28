@@ -26,3 +26,4 @@ dontaudit hal_power_default self:capability dac_override;
 
 # /dev/socket/pps
 allow hal_power_default mm-pp-daemon:unix_stream_socket connectto;
+allow hal_power_default pps_socket:sock_file { write };
