@@ -163,6 +163,9 @@ on init
     write /dev/sys/fs/by-name/userdata/data_io_flag 56
     write /dev/sys/fs/by-name/userdata/node_io_flag 56
 
+    # Enable suspend to RAM
+    write /sys/power/mem_sleep "deep"
+
 on fs
     mount_all /vendor/etc/fstab.qcom --early
     
