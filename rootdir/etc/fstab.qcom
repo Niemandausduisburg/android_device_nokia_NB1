@@ -19,4 +19,5 @@
 /devices/soc/c0a4900.sdhci/mmc_host*                         auto    auto    nosuid,nodev    wait,voldmanaged=sdcard1:auto
 /devices/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.*.auto*     auto    auto    nosuid,nodev    wait,voldmanaged=usbotg:auto
 
-/dev/block/zram0                                             none    swap    defaults        zramsize=50%
+# ZRAM
+/dev/block/zram0                         none                swap     defaults      zramsize=50%,max_comp_streams=8,zram_backingdev_size=512M
