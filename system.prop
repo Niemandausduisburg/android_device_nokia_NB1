@@ -40,7 +40,6 @@ debug.sf.enable_hwc_vds=0
 debug.sf.disable_hwc_overlays=1
 debug.sdm.support_writeback=0
 debug.renderengine.backend=skiaglthreaded
-debug.sf.hw=1
 debug.hwui.renderer=skiagl
 debug.sf.auto_latch_unsignaled=true
 ro.vendor.display.cabl=2
