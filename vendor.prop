@@ -208,6 +208,7 @@ media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
+ro.vendor.perf.scroll_opt=true
 
 # Phantom process monitoring
 sys.fflag.override.settings_enable_monitor_phantom_procs=false
