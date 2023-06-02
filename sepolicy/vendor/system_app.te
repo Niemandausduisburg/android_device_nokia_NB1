@@ -9,7 +9,9 @@ allow system_app hal_wifi_supplicant_default:binder { call };
 allow system_app hal_lineage_health_default:binder { call };
 allow system_app wificond:binder { call };
 
-
 # Zygote
 allow system_app zygote:unix_stream_socket { getopt };
 
+# To allow Settings to find and bind Google Battery HAL
+allow system_app hal_googlebattery_service:service_manager find;
+binder_call(system_app, hal_googlebattery)
