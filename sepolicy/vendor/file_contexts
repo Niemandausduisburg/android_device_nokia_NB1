@@ -16,6 +16,9 @@
 /data/system/fingerprint(/.*)?      u:object_r:gx_fpd_data_file:s0
 /vendor/bin/gx_fpd                  u:object_r:gx_fpd_exec:s0
 
+# Google battery
+/vendor/bin/hw/vendor\.google\.google_battery-service                     u:object_r:hal_googlebattery_exec:s0
+
 # Partitions (A/B)
 /dev/block/platform/soc/1da4000\.ufshc/by-name/cda_[ab]                        u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/1da4000\.ufshc/by-name/hidden_[ab]                     u:object_r:custom_ab_block_device:s0
