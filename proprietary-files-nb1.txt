@@ -595,15 +595,6 @@ vendor/lib/hw/keystore.msm8998.so|7ce29b1848f7ff4875918f5bdc996910a8046c9d
 vendor/lib64/hw/keystore.msm8998.so|68be3e488242336bc3c8a85db4a0393a581e8846
 
 # Graphics (Firmware)
-vendor/firmware/a225p5_pm4.fw
-vendor/firmware/a225_pfp.fw
-vendor/firmware/a225_pm4.fw
-vendor/firmware/a300_pfp.fw
-vendor/firmware/a300_pm4.fw
-vendor/firmware/a330_pfp.fw
-vendor/firmware/a330_pm4.fw
-vendor/firmware/a420_pfp.fw
-vendor/firmware/a420_pm4.fw
 vendor/firmware/a530v1_pfp.fw
 vendor/firmware/a530v1_pm4.fw
 vendor/firmware/a530v2_seq.fw2
