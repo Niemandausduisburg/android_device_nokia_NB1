@@ -346,7 +346,7 @@
 
         </module>
 
-        <!-- A2DP Input Audio HAL -->
+        <!-- A2DP Audio HAL -->
         <xi:include href="/vendor/etc/a2dp_in_audio_policy_configuration_7_0.xml"/>
 
         <!-- Usb Audio HAL -->

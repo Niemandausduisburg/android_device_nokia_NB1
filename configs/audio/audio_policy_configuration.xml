@@ -369,10 +369,12 @@
                        sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload"/>
                 <route type="mix" sink="hifi_input" sources="USB Device In,USB Headset In" />
             </routes>
-
         </module>
 
-        <!-- A2DP Input Audio HAL -->
+        <!-- Bluetooth Audio HAL -->
+        <xi:include href="/vendor/etc/bluetooth_audio_policy_configuration_7_0.xml"/>
+
+        <!-- A2DP Audio HAL -->
         <xi:include href="/vendor/etc/a2dp_in_audio_policy_configuration_7_0.xml"/>
 
         <!-- Usb Audio HAL -->
