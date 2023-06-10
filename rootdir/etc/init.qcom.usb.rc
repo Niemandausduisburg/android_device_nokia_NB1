@@ -110,7 +110,7 @@ on boot
     setprop sys.usb.mtp.device_type 3
     setprop vendor.usb.controller ${sys.usb.controller}
     
-    # NB1 OTG
+    # OTG
     chown system system /sys/class/power_supply/usb/device/fih_otg_fun
     chmod 0664 /sys/class/power_supply/usb/device/fih_otg_fun
     
