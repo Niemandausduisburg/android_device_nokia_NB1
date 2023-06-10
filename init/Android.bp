@@ -15,9 +15,9 @@
 //
 
 cc_library_static {
-    name: "libinit_nb1",
+    name: "libinit_NLA",
     recovery_available: true,
-    srcs: ["init_nb1.cpp"],
+    srcs: ["init_NLA.cpp"],
     include_dirs: [
         "system/core/init"
     ],

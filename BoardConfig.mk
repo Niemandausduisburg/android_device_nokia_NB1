@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/nokia/NB1
+DEVICE_PATH := device/nokia/NLA
 
 # Architecture
 TARGET_ARCH := arm64
@@ -94,7 +94,7 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CONFIG := nb1_defconfig
+TARGET_KERNEL_CONFIG := lineageos_NLA_defconfig
 TARGET_KERNEL_SOURCE := kernel/nokia/msm8998
 TARGET_KERNEL_VERSION := 4.4
 
@@ -117,8 +117,8 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_nb1
-TARGET_RECOVERY_DEVICE_MODULES := libinit_nb1
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_NLA
+TARGET_RECOVERY_DEVICE_MODULES := libinit_NLA
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -187,4 +187,4 @@ WIFI_AVOID_IFACE_RESET_MAC_CHANGE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit the proprietary files
--include vendor/nokia/NB1/BoardConfigVendor.mk
+-include vendor/nokia/NLA/BoardConfigVendor.mk

@@ -28,6 +28,7 @@
 #
 
 on early-init
+    rm /persist/bluetooth/.bt_nv.bin
     write /proc/sys/kernel/sched_boost 1
 
 on init
@@ -189,6 +190,15 @@ on post-fs
     # Wait for qseecomd started
     wait_for_prop vendor.sys.listeners.registered true
 
+on post-fs-data
+    # Camera
+    start rf_calbd
+    start oisgyro_calbd
+
+    # Goodix
+    mkdir /data/vendor/misc/touch 0770 system system
+    mkdir /data/system/fingerprint 0770 system system
+
 on late-fs
     # Start services for bootanim
     start surfaceflinger
@@ -205,31 +215,95 @@ on late-fs
     # Mount RW partitions which need to run fsck
     mount_all /vendor/etc/fstab.qcom --late
 
-# For cpusets initialize for Silver Only first and then Silver + Gold
-# Silver Only configuration cannot work with 0-7
 on boot
     start vendor.rmt_storage
     start vendor.rfs_access
 
-   ####Regionalization config and prop files####
-   chmod 0644 /persist/speccfg/spec
-   chmod 0644 /persist/speccfg/devicetype
-   chmod 0644 /persist/speccfg/mbnversion
-   chmod 0644 /persist/speccfg/.not_triggered
-   chmod 0644 /persist/speccfg/vendor_ro.prop
-   chmod 0644 /persist/speccfg/vendor_persist.prop
-   chmod 0644 /persist/speccfg/submask
-   chmod 0644 /persist/speccfg/partition
-   chown system system /persist/speccfg/spec
-   chown system system /persist/speccfg/devicetype
-   chown system system /persist/speccfg/mbnversion
-   chown system system /persist/speccfg/.not_triggered
-   chown system system /persist/speccfg/vendor_ro.prop
-   chown system system /persist/speccfg/vendor_persist.prop
-   chown system system /persist/speccfg/submask
-   chown system system /persist/speccfg/partition
+    # Camera
+    chown system camera /sys/kernel/range/enable_ps_sensor
+    chmod 0660 /sys/kernel/range/enable_ps_sensor
+    chown system camera /sys/kernel/range/set_delay_ms
+    chmod 0660 /sys/kernel/range/set_delay_ms
+    chown system camera /sys/kernel/range/cal_offset
+    chmod 0660 /sys/kernel/range/cal_offset
+    chown system camera /sys/kernel/range/cal_xtalk
+    chmod 0660 /sys/kernel/range/cal_xtalk
+    chown system camera /sys/kernel/range/cal_data
+    chmod 0220 /sys/kernel/range/cal_data
+    chown system camera /sys/kernel/range/do_flush
+    chmod 0660 /sys/kernel/range/do_flush
+    chown system camera /sys/kernel/range/show_distance
+    chmod 0660 /sys/kernel/range/show_distance
 
-#USB controller configuration
+    chown system system /sys/kernel/ois_control/gyro_cal
+    chmod 0660 /sys/kernel/ois_control/gyro_cal
+
+    # Set fingerprint device permissions
+    chown system system /dev/goodix_fp
+    chmod 0644 /dev/goodix_fp
+
+    # Set panel permissions
+    chown system system /proc/AllHWList/LCM0
+    chown system system /proc/AllHWList/LCM0/AOD
+    chown system system /proc/AllHWList/LCM0/PanelID
+    chown system system /proc/AllHWList/LCM0/setlp
+    chown system system /sys/class/graphics/fb0/blank
+    chown system system /proc/AllHWList/LCM0/glance
+    chown system system /proc/AllHWList/LCM0/awer_cnt
+    chown system system /proc/AllHWList/LCM0/awer_status	
+
+    chmod 777 /proc/AllHWList/LCM0
+    chmod 664 /proc/AllHWList/LCM0/AOD
+    chmod 644 /proc/AllHWList/LCM0/PanelID
+    chmod 664 /proc/AllHWList/LCM0/setlp
+    chmod 664 /proc/AllHWList/LCM0/glance
+    chmod 664 /proc/AllHWList/LCM0/awer_cnt
+    chmod 664 /proc/AllHWList/LCM0/awer_status
+
+    # Set touch permissions
+    chown system system /proc/AllHWList/tp_self_test
+    chown system system /proc/AllHWList/tp_self_test_U0
+    chown system system /proc/AllHWList/tp_upgrade
+    chown system system /proc/AllHWList/tp_alt_rst
+    chown system system /proc/AllHWList/tp_alt_st_count
+    chown system system /proc/AllHWList/tp_alt_st_enable
+    chown system system /proc/AllHWList/tp_prox_status
+    chown system system /sys/devices/virtual/input/siw_touch_input/lpwg_notify
+    chown system system /sys/devices/virtual/input/siw_touch_input/glove_status
+    chmod 644 /proc/AllHWList/tp_self_test 
+    chmod 644 /proc/AllHWList/tp_self_test_U0 
+    chmod 444 /proc/AllHWList/tp_fw_ver 
+    chmod 644 /proc/AllHWList/tp_upgrade
+    chmod 644 /proc/AllHWList/tp_alt_rst
+    chmod 644 /proc/AllHWList/tp_alt_st_count
+    chmod 644 /proc/AllHWList/tp_alt_st_enable
+    chmod 644 /proc/AllHWList/tp_double_tap
+    chmod 644 /proc/AllHWList/tp_prox_status
+
+    ####Regionalization config and prop files####
+    chmod 0644 /persist/speccfg/spec
+    chmod 0644 /persist/speccfg/devicetype
+    chmod 0644 /persist/speccfg/mbnversion
+    chmod 0644 /persist/speccfg/.not_triggered
+    chmod 0644 /persist/speccfg/vendor_ro.prop
+    chmod 0644 /persist/speccfg/vendor_persist.prop
+    chmod 0644 /persist/speccfg/submask
+    chmod 0644 /persist/speccfg/partition
+    chown system system /persist/speccfg/spec
+    chown system system /persist/speccfg/devicetype
+    chown system system /persist/speccfg/mbnversion
+    chown system system /persist/speccfg/.not_triggered
+    chown system system /persist/speccfg/vendor_ro.prop
+    chown system system /persist/speccfg/vendor_persist.prop
+    chown system system /persist/speccfg/submask
+    chown system system /persist/speccfg/partition
+
+    # Set charging permissions
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 0664 /sys/class/power_supply/battery/input_suspend
+    restorecon /sys/class/power_supply/battery/input_suspend
+
+    # USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"
     setprop vendor.usb.rmnet.func.name "gsi"
     setprop vendor.usb.rmnet.inst.name "rmnet"
@@ -327,6 +401,21 @@ on property:init.svc.zygote=running
 on property:init.svc.zygote=restarting
     stop ppd
 
+# Camera calibration
+service rf_calbd /vendor/bin/toybox_vendor dd if=/dev/block/bootdevice/by-name/deviceinfo of=/sys/kernel/range/cal_data ibs=16 obs=16 skip=32000 count=1
+	class main
+	user root
+	group system camera
+	oneshot
+	disabled
+
+service oisgyro_calbd /vendor/bin/toybox_vendor dd if=/dev/block/bootdevice/by-name/deviceinfo of=/sys/kernel/ois_control/gyro_cal ibs=16 obs=16 skip=2560 count=1
+	class main
+	user root
+	group system system
+	oneshot
+	disabled
+
 # Wireless init for wlan_mac.bin
 service wireless-init /system/vendor/bin/wireless_init -i
     class main
@@ -354,3 +443,37 @@ service vendor.adsprpcd /vendor/bin/adsprpcd
    class main
    user system
    group media
+
+# Goodix 
+service vendor.gx_fpd /vendor/bin/gx_fpd
+    class main
+    user system
+    group system
+
+on property:sys.boot_completed=1
+    restorecon_recursive /data/system/fingerprint/
+
+# Amplifier
+service amp-init-sh /vendor/bin/init.NLA.smartamp_init.sh
+    class late_start
+    user system
+    oneshot
+
+# Wi-Fi
+on property:vendor.wifi.mtu=true
+   write /sys/class/net/wlan0/mtu 1440
+
+on property:vendor.wifi.mtu=false
+   write /sys/class/net/wlan0/mtu 1500
+
+on property:vendor.wifi.ommtu=true
+   write /sys/class/net/wlan0/mtu 1390
+
+# Set up SIM slot
+on property:ro.boot.simslot=1
+    setprop persist.radio.multisim.config ssss
+    setprop ro.telephony.default_network 22
+
+on property:ro.boot.simslot=2
+    setprop persist.radio.multisim.config dsds
+    setprop ro.telephony.default_network 22,20

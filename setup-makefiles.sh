@@ -7,7 +7,7 @@
 
 set -e
 
-DEVICE=NB1
+DEVICE=NLA
 VENDOR=nokia
 
 # Load extract_utils and do some sanity checks
@@ -30,7 +30,7 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}"
 write_headers
 
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
-write_makefiles "${MY_DIR}/proprietary-files-nb1.txt" true
+write_makefiles "${MY_DIR}/proprietary-files-NLA.txt" true
 
 # Finish
 write_footers
