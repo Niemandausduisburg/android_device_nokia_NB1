@@ -77,7 +77,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.1-impl:32 \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
-    Bluetooth \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor:32 \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor:32 \
@@ -125,7 +124,7 @@ PRODUCT_PACKAGES += \
     libui_shim \
     libmm-qcamera \
     mm-qcamera-app \
-	    libhal_dbg
+    libhal_dbg
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.CDS=off
