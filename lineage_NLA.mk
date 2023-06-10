@@ -14,11 +14,11 @@ PRODUCT_SHIPPING_API_LEVEL := 27
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit from NB1 device
+# Inherit from NLA device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-PRODUCT_NAME := lineage_NB1
-PRODUCT_DEVICE := NB1
+PRODUCT_NAME := lineage_NLA
+PRODUCT_DEVICE := NLA
 PRODUCT_MANUFACTURER := HMD Global
 PRODUCT_BRAND := Nokia
 PRODUCT_MODEL := Nokia 8
@@ -26,8 +26,7 @@ PRODUCT_MODEL := Nokia 8
 PRODUCT_GMS_CLIENTID_BASE := android-hmd-rev2
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_DEVICE=NB1 \
-    PRODUCT_NAME=NB1_00WW_FIH \
+    PRODUCT_NAME=TA-1004_00WW \
     PRIVATE_BUILD_DESC="TA-1004_00WW-user 8.1.0 OPR1.170623.026 00WW_4_88B release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop

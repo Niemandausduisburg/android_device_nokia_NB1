@@ -29,13 +29,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudio-resampler \
     libaudioroute \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
-    libtinycompress \
-    libvolumelistener \
-    tinymix.vendor \
-    tinyplay.vendor
+    libtinycompress
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_configs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_configs.xml \
@@ -63,7 +57,6 @@ PRODUCT_COPY_FILES += \
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
-    com.dsi.ant.antradio_library \
     com.dsi.ant@1.0.vendor
 
 # Bluetooth
@@ -82,8 +75,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0.vendor:32 \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor:32 \
-    vendor.qti.hardware.btconfigstore@2.0.vendor \
-    libldacBT_bco
+    vendor.qti.hardware.btconfigstore@2.0.vendor
 
 # Boot animation resolution
 TARGET_SCREEN_HEIGHT := 1920
@@ -118,7 +110,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     camera.msm8998 \
-    libcamshim \
     libui_shim \
     libmm-qcamera \
     mm-qcamera-app \
@@ -141,14 +132,9 @@ PRODUCT_PACKAGES += \
     gralloc.msm8998 \
     hwcomposer.msm8998 \
     memtrack.msm8998 \
-    libdisplayconfig \
-    libdisplayconfig.qti \
-    libdisplayconfig.qti.vendor \
-    libgralloc.qti \
     libtinyxml \
     libqdMetaData \
     libqdMetaData.system \
-    libqdMetaData.vendor \
     libsdmcore \
     libsdmutils
 
@@ -157,7 +143,6 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.graphics.mapper@2.1-impl \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     android.frameworks.displayservice@1.0 \
@@ -325,12 +310,7 @@ PRODUCT_PACKAGES += \
     libavservices_minijail.vendor \
     libc2dcolorconvert \
     libmm-omxcore \
-    libOmxAacEnc \
-    libOmxAmrEnc \
     libOmxCore \
-    libOmxEvrcEnc \
-    libOmxG711Enc \
-    libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw \
@@ -412,13 +392,10 @@ PRODUCT_COPY_FILES += \
 # QMI
 PRODUCT_PACKAGES += \
     libjson \
-    libjson.vendor
 
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
     libqti_vndfwk_detect.vendor \
-    libvndfwk_detect_jni \
-    libvndfwk_detect_jni.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qmi/qmi_fw.conf:$(TARGET_COPY_OUT_VENDOR)/etc/qmi_fw.conf
@@ -447,16 +424,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:root/init.recovery.qcom.rc
 
-# Ramdisk
+# Init
 PRODUCT_PACKAGES += \
-    init.nb1.smartamp_init.sh \
+    init.NLA.smartamp_init.sh \
     init.qcom.early_boot.sh \
     init.qcom.sh \
     init.qcom.usb.sh \
     init.qti.fm.sh \
     init.qti.ims.sh \
-    init.nb1.camera.rc \
-    init.nb1.target.rc \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.target.rc \
@@ -482,8 +457,7 @@ PRODUCT_COPY_FILES += \
 # Shims
 PRODUCT_PACKAGES += \
     libshim_binder \
-    libshim_gui \
-    libcamshim
+    libshim_gui
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -521,7 +495,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service \
-    thermal.msm8998
 
 # USB
 PRODUCT_PACKAGES += \
@@ -574,4 +547,4 @@ PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
 # Inherit vendor
-$(call inherit-product, vendor/nokia/NB1/NB1-vendor.mk)
+$(call inherit-product, vendor/nokia/NLA/NLA-vendor.mk)

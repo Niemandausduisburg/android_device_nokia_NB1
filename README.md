@@ -1,6 +1,6 @@
-# Device configurations for Nokia 8 (NB1)
+# Device configurations for Nokia 8 Repartitioned (NLA)
 
-The Nokia 8 (codenamed "NB1") is a flagship Nokia-branded smartphone running the Android operating system. Announced on 16 August 2017 in London, England by HMD Global, the phone began sales in Europe in September 2017. Nokia 8 is the first high-end Nokia-branded device since the Nokia Lumia 930 in 2014.
+The Nokia 8 (codenamed "NLA") is a flagship Nokia-branded smartphone running the Android operating system. Announced on 16 August 2017 in London, England by HMD Global, the phone began sales in Europe in September 2017. Nokia 8 is the first high-end Nokia-branded device since the Nokia Lumia 930 in 2014.
 
 ## Device specifications
 | Basic                   | Spec Sheet                                                                                                                     |
