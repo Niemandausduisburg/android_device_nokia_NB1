@@ -587,15 +587,5 @@ PRODUCT_PACKAGES += \
     android.system.net.netd@1.0.vendor \
     netutils-wrapper-1.0
 
-# WiFi Display
-PRODUCT_PACKAGES += \
-    libaacwrapper \
-    libmediaextractorservice \
-    libnl \
-    libstagefright_enc_common
-
-#PRODUCT_BOOT_JARS += \
-    WfdCommon
-
 # Inherit vendor
 $(call inherit-product, vendor/nokia/NB1/NB1-vendor.mk)
