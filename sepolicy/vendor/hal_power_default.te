@@ -21,9 +21,10 @@ set_prop(hal_power_default, vendor_power_prop)
 # To dump
 allow hal_power_default cgroup:file rw_file_perms;
 
-# Hide dac_override spam
+# Hide dac_override & dac_read_search spam
 dontaudit hal_power_default self:capability dac_override;
+dontaudit hal_power_default hal_power_default:capability dac_read_search;
 
 # /dev/socket/pps
 allow hal_power_default mm-pp-daemon:unix_stream_socket connectto;
-allow hal_power_default pps_socket:sock_file { write };
+allow hal_power_default pps_socket:sock_file write;
