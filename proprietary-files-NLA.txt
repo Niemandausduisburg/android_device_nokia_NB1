@@ -1,4 +1,3 @@
-
 ## Nokia 8 proprietary files
 ## From Nokia/NB1_00WW_FIH/NB1:9/PPR1.180610.011/00WW_5_16A:user/release-keys unless pinned
 
@@ -18,17 +17,6 @@ vendor/lib64/libaudio_log_utils.so|a8e0f5215004c493ff9bc4541e91ed8d1b4411a6
 vendor/lib64/libhdmiedid.so|70806d550dac22d47dce63f0a8cd83b02349fc3e
 vendor/lib64/libhfp.so|56bb74be4d16a1a90632eeddfa801af934596bda
 vendor/lib64/libsndmonitor.so|0ebc578de3a8001aea56ffad2307107f5f05b439
-
-# Audio (ACDB)
-vendor/etc/acdbdata/adsp_avs_config.acdb
-vendor/etc/acdbdata/NB1/Bluetooth_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
-vendor/etc/acdbdata/NB1/General_cal.acdb:vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
-vendor/etc/acdbdata/NB1/Global_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
-vendor/etc/acdbdata/NB1/Handset_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
-vendor/etc/acdbdata/NB1/Hdmi_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
-vendor/etc/acdbdata/NB1/Headset_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
-vendor/etc/acdbdata/NB1/Speaker_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
-vendor/etc/acdbdata/NB1/workspaceFile.qwsp:vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 
 # Audio (Firmware)
 etc/firmware/tfa98xx.cnt:vendor/firmware/tfa98xx.cnt
