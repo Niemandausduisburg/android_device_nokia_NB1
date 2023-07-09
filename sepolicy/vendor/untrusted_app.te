@@ -1,3 +1,16 @@
+# Untrusted app
 get_prop(untrusted_app, vendor_persist_camera_prop)
 
 allow untrusted_app sysfs_kgsl:dir search;
+
+# 25
+allow untrusted_app_25 zygote:unix_stream_socket getopt;
+
+# 29
+allow untrusted_app_29 rootfs:dir read;
+allow untrusted_app_29 zygote:unix_stream_socket getopt;
+
+# 30
+allow untrusted_app_30 zygote:unix_stream_socket getopt;
+
+dontaudit untrusted_app untrusted_app:netlink_route_socket bind;
