@@ -3,14 +3,14 @@
 
 # Audio (ACDB) - from CTL - QKQ1.190828.002
 vendor/etc/acdbdata/adsp_avs_config.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Bluetooth_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/General_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Global_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Handset_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Hdmi_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Headset_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Speaker_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/workspaceFile.qwsp
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Bluetooth_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/General_cal.acdb:vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Global_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Handset_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Hdmi_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Headset_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Speaker_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/workspaceFile.qwsp:vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 
 # ADSP
 vendor/bin/adsprpcd
