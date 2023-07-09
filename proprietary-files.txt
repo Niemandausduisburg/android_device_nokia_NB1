@@ -1,6 +1,17 @@
 ## Common proprietary files
 ## From Nokia/Daredevil_00WW/DDV_sprout:11/RKQ1.210607.001/00WW_3_690:user/release-keys unless pinned
 
+# Audio (ACDB) - from CTL - QKQ1.190828.002
+vendor/etc/acdbdata/adsp_avs_config.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Bluetooth_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/General_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Global_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Handset_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Hdmi_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Headset_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Speaker_cal.acdb
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/workspaceFile.qwsp
+
 # ADSP
 vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
