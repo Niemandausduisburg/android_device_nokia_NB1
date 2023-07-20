@@ -1,5 +1,5 @@
 ## Common proprietary files
-## From Nokia/Daredevil_00WW/DDV_sprout:11/RKQ1.210607.001/00WW_3_690:user/release-keys unless pinned
+## From Nokia/Daredevil_00WW/DDV_sprout:11/RKQ1.210607.001/00WW_3_69G:user/release-keys unless pinned
 
 # Audio (ACDB) - from CTL - QKQ1.190828.002
 vendor/etc/acdbdata/adsp_avs_config.acdb
