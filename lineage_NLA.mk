@@ -22,7 +22,17 @@ RISING_CHIPSET := msm8998
 RISING_MAINTAINER := Niemandausduisburg
 TARGET_USE_PIXEL_FINGERPRINT := false
 TARGET_BUILD_APERTURE_CAMERA := true
+ifeq ($(BUILD_GAPPS),false)
 RISING_PACKAGE_TYPE := AOSP
+endif
+
+# MindtheGapps
+ifeq ($(BUILD_GAPPS),true)
+WITH_GMS := false
+TARGET_CORE_GMS := false
+RISING_PACKAGE_TYPE := MindtheGapps
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+endif
 
 # Extra Google/Pixel features 
 TARGET_SUPPORTS_QUICK_TAP := true
