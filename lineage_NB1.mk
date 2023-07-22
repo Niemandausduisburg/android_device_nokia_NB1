@@ -17,6 +17,11 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from NB1 device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+# MindtheGapps
+ifeq ($(BUILD_GAPPS),true)
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+endif
+
 PRODUCT_NAME := lineage_NB1
 PRODUCT_DEVICE := NB1
 PRODUCT_MANUFACTURER := HMD Global
