@@ -25,6 +25,7 @@ TARGET_BUILD_APERTURE_CAMERA := true
 ifeq ($(BUILD_GAPPS),false)
 RISING_PACKAGE_TYPE := AOSP
 endif
+TARGET_EXCLUDES_AUDIOFX := false
 
 # MindtheGapps
 ifeq ($(BUILD_GAPPS),true)
