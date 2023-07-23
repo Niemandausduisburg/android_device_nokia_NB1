@@ -1,23 +1,6 @@
 ## Nokia 8 proprietary files
 ## From Nokia/NB1_00WW_FIH/NB1:9/PPR1.180610.011/00WW_5_16A:user/release-keys unless pinned
 
-# Audio (Hardware) - from A1N QKQ1.190828.002
-vendor/etc/audio/silence_48k.wav|26df84a9ba771f568ae58f69a248cea4ce8b6209
-vendor/lib/hw/audio.primary.msm8998.so|11b783e02bd8dc27bacbcf0d3847810e54910ecd
-vendor/lib/libaudioalsa.so|272cd6a93bca7edbe3cf4323ca1612737f4f9cde
-vendor/lib/liba2dpoffload.so|a56079bb7b62600ef7ca661c5f05c8294ccd9d54
-vendor/lib/libaudio_log_utils.so|ad36513df2524539496677ff1cbec37037d0b476
-vendor/lib/libhdmiedid.so|18a5b77de0a0ee0cbdcf4e1cc0026c7c048f886d
-vendor/lib/libhfp.so|10c85c88970c9919e67f6a4519053683c32f3c5c
-vendor/lib/libsndmonitor.so|92e11f09f5e6e37821466dff8c6c26fe4810de41
-vendor/lib64/hw/audio.primary.msm8998.so|e7280fb7c2841752864a75d92c0f877ce842fe98
-vendor/lib64/libaudioalsa.so|a743be854f0af2ae8f60d6c598f078a4c09f8b41
-vendor/lib64/liba2dpoffload.so|b4760206730448f188e68e2a55e67e4692c1525e
-vendor/lib64/libaudio_log_utils.so|a8e0f5215004c493ff9bc4541e91ed8d1b4411a6
-vendor/lib64/libhdmiedid.so|70806d550dac22d47dce63f0a8cd83b02349fc3e
-vendor/lib64/libhfp.so|56bb74be4d16a1a90632eeddfa801af934596bda
-vendor/lib64/libsndmonitor.so|0ebc578de3a8001aea56ffad2307107f5f05b439
-
 # Audio (Firmware)
 etc/firmware/tfa98xx.cnt:vendor/firmware/tfa98xx.cnt
 etc/firmware/tfa98xxEVT.cnt:vendor/firmware/tfa98xxEVT.cnt
