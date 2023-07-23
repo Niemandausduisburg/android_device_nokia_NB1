@@ -1,16 +1,16 @@
 ## Common proprietary files
 ## From Nokia/Daredevil_00WW/DDV_sprout:11/RKQ1.210607.001/00WW_3_69G:user/release-keys unless pinned
 
-# Audio (ACDB) - from CTL - QKQ1.190828.002
-vendor/etc/acdbdata/adsp_avs_config.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Bluetooth_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/General_cal.acdb:vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Global_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Handset_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Hdmi_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Headset_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Speaker_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
-vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/workspaceFile.qwsp:vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
+# Audio (ACDB) - from CTL_sprout - QKQ1.190828.002
+vendor/etc/acdbdata/adsp_avs_config.acdb|df26d45014538751c377f35728a6d3f284130996
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Bluetooth_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb|2ed6395d6094b0632ceb48d99ac64bc5c68b8691
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/General_cal.acdb:vendor/etc/acdbdata/MTP/MTP_General_cal.acdb|99c9188cea811fb5eef19b61a714bf32d1f97f66
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Global_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb|59553a41b292b34adacf1c9b8efc4af1a64492ec
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Handset_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb|ffd5d74a7264ab6ad6f1c60a9726383eb4363e0b
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Hdmi_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb|37c65e9f2d8b7ffbad5b477b53a117d1a9b8113e
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Headset_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb|26abca2842d2c844d1676e524f0b6bc12b21a352
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/Speaker_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb|dc1e9e8214ed8cb7918d4d9a5d25d81b46b05a9c
+vendor/etc/acdbdata/CTL/sdm660-snd-card-ctl/workspaceFile.qwsp:vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp|caf2c32585c13d70d96c8c2e9ab0ccf8ac4afc61
 
 # ADSP
 vendor/bin/adsprpcd
@@ -436,66 +436,66 @@ vendor/lib64/vendor.qti.gnss@4.0-service.so
 vendor/lib64/vendor.qti.gnss@4.0.so
 
 # Graphics - from phoenix_sprout - phoenix_lao_com-user 10 QKQ1.190918.001 202681220e953 release-keys
-vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libEGL_adreno.so
-vendor/lib/egl/libGLESv1_CM_adreno.so
-vendor/lib/egl/libGLESv2_adreno.so
-vendor/lib/egl/libQTapGLES.so
-vendor/lib/egl/libq3dtools_adreno.so
-vendor/lib/egl/libq3dtools_esx.so
-vendor/lib/hw/vulkan.msm8998.so
-vendor/lib/libadreno_utils.so
-vendor/lib/libC2D2.so
-vendor/lib/libc2d30_bltlib.so
-vendor/lib/libCB.so
-vendor/lib/libEGL_adreno.so
-vendor/lib/libgsl.so
-vendor/lib/libhdr_tm.so
-vendor/lib/libllvm-glnext.so
-vendor/lib/libllvm-qcom.so
-vendor/lib/libOpenCL.so
-vendor/lib/libpvr.so
-vendor/lib/libq3dtools_adreno.so
-vendor/lib/librs_adreno.so
-vendor/lib/libVkLayer_q3dtools.so
-vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libEGL_adreno.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
-vendor/lib64/egl/libGLESv2_adreno.so
-vendor/lib64/egl/libQTapGLES.so
-vendor/lib64/egl/libq3dtools_adreno.so
-vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/hw/vulkan.msm8998.so
-vendor/lib64/libadreno_utils.so
-vendor/lib64/libC2D2.so
-vendor/lib64/libc2d30_bltlib.so
-vendor/lib64/libCB.so
-vendor/lib64/libEGL_adreno.so
-vendor/lib64/libgsl.so
-vendor/lib64/libhdr_tm.so
-vendor/lib64/libllvm-glnext.so
-vendor/lib64/libllvm-qcom.so
-vendor/lib64/libOpenCL.so
-vendor/lib64/libpvr.so
-vendor/lib64/libq3dtools_adreno.so
-vendor/lib64/librs_adreno.so
-vendor/lib64/libVkLayer_q3dtools.so
+vendor/lib/egl/eglSubDriverAndroid.so|0281b6e172065bcf1f46dfb0ab23aee57df4f826
+vendor/lib/egl/libEGL_adreno.so|e8217b52ee66ffb2a091a2e81565dece057261e9
+vendor/lib/egl/libGLESv1_CM_adreno.so|046e9020004fdd54ebe19cee923b25261c419fe6
+vendor/lib/egl/libGLESv2_adreno.so|2b09aa80e0d2660c9c0ecf0c177724219f8c6d42
+vendor/lib/egl/libQTapGLES.so|eb1414aee39221b707fd6df6fe423f826f4adb57
+vendor/lib/egl/libq3dtools_adreno.so|b43e39f86ed2fc411f5a7202214f660083e63cbc
+vendor/lib/egl/libq3dtools_esx.so|a953e89fa73dff3cb7b43e183c3f36ad7a73c022
+vendor/lib/hw/vulkan.msm8998.so|1f1e27bf3254cebbc1c0aa961c83a67f2ba8aa66
+vendor/lib/libadreno_utils.so|a9cf27142db61bb0fcddc30cc80ba0d5bf9ea711
+vendor/lib/libC2D2.so|b250b2b94a70b465f49f49b9f99f02ddacf4ffd0
+vendor/lib/libc2d30_bltlib.so|45792246fd7290c43e8533836f72452f46059e47
+vendor/lib/libCB.so|c1368ab9bee5cd5236e71239e95f5e6fc89ec89e
+vendor/lib/libEGL_adreno.so|31e44fac035da19ac261de63e0edf186132b24ff
+vendor/lib/libgsl.so|7bc7c7590daf591017d6d2353604b2d9f87be571
+vendor/lib/libhdr_tm.so|8d253c28c1fd976ac009088e36d483c16566f9a5
+vendor/lib/libllvm-glnext.so|e3133831b86fbab799ec2d6da9ab0eb2a0b8bad7
+vendor/lib/libllvm-qcom.so|9be63d3767827ee946032d62b18850926a20509e
+vendor/lib/libOpenCL.so|c188145ba4e799ba8733acadceb6ce52b6041e4c
+vendor/lib/libpvr.so|3c7d0c03e292a649a645ebecf97920eb34369ad3
+vendor/lib/libq3dtools_adreno.so|8d86f17059c210ab15a57ac9c648da1311ae35a1
+vendor/lib/librs_adreno.so|21cb023ba33062fbb1ad9b1738239c79a5a8ec43
+vendor/lib/libVkLayer_q3dtools.so|527589b3780440dc26aceebc97866dadbeeebd86
+vendor/lib64/egl/eglSubDriverAndroid.so|d883d49a91c0a8da783d6df5e48b3f0e02f5ac59
+vendor/lib64/egl/libEGL_adreno.so|3dabe7acc08a4fa515faadd905cf596cc1feda74
+vendor/lib64/egl/libGLESv1_CM_adreno.so|ffda460984dfba47c62fc8c930219235e10ce863
+vendor/lib64/egl/libGLESv2_adreno.so|7f4ee250b12da5629614e1a263047615bfb89175
+vendor/lib64/egl/libQTapGLES.so|6fb056221e4417525bbf202efc7237697bf4037f
+vendor/lib64/egl/libq3dtools_adreno.so|ff8f8e0da729a9ceb272b08de8fe9eb1d02d5eed
+vendor/lib64/egl/libq3dtools_esx.so|d4eab828f11009c52edd3661f6295750bf22ca0d
+vendor/lib64/hw/vulkan.msm8998.so|ba974da34ad96003e77de2bece70d3eeaa758988
+vendor/lib64/libadreno_utils.so|c15c8b0366749a0cdafe8fe12bac36c796722274
+vendor/lib64/libC2D2.so|f836c442b6832d70083af81994bb6eb4fe5a4b51
+vendor/lib64/libc2d30_bltlib.so|be61233d2f31debe746bf77376b431152764e171
+vendor/lib64/libCB.so|436c7d0648d3d377ac148ef6b661d12361055c2f
+vendor/lib64/libEGL_adreno.so|31e44fac035da19ac261de63e0edf186132b24ff
+vendor/lib64/libgsl.so|be83248d2340806acc78613da74dff53f66b7941
+vendor/lib64/libhdr_tm.so|1e74de5b505c8f742f1fb0379725ec9f5fd53282
+vendor/lib64/libllvm-glnext.so|265407ef00d5f8bfa88f3344e01509cbd400d892
+vendor/lib64/libllvm-qcom.so|c4a55bdd7291c722dc5bf84064e2914e5256af7a
+vendor/lib64/libOpenCL.so|dfd1d8c3a3e05dc1bee287813d4c94b2449ac06e
+vendor/lib64/libpvr.so|349bcfb07edda1034fe30df6ae2ced5297ecb7ed
+vendor/lib64/libq3dtools_adreno.so|8d86f17059c210ab15a57ac9c648da1311ae35a1
+vendor/lib64/librs_adreno.so|bf87696c917d75da5557c194098faaae5e303a0b
+vendor/lib64/libVkLayer_q3dtools.so|9590e902f9a2205eee55dd041cf165e3b3f4847e
 
 # Graphics (SDM) - from phoenix_sprout - phoenix_lao_com-user 10 QKQ1.190918.001 202681220e953 release-keys
-vendor/lib/libqseed3.so
-vendor/lib/libsdedrm.so
-vendor/lib/libsdm-color.so
-vendor/lib/libsdm-diag.so
--vendor/lib/libsdm-disp-vndapis.so
-vendor/lib/libsdmextension.so
-vendor/lib/libtinyxml2_1.so
-vendor/lib64/libqseed3.so
-vendor/lib64/libsdedrm.so
-vendor/lib64/libsdm-color.so
-vendor/lib64/libsdm-diag.so
--vendor/lib64/libsdm-disp-vndapis.so
-vendor/lib64/libsdmextension.so
-vendor/lib64/libtinyxml2_1.so
+vendor/lib/libqseed3.so|1a67e4c3e7d904dc3d3af35c0f516fe13ed88bcb
+vendor/lib/libsdedrm.so|93d9acc2a9a857f6e36cf0db348977eedfeec9cb
+vendor/lib/libsdm-color.so|0ac3aa59aa06eed8b66bc72d8cd74ea1b2eb34fb
+vendor/lib/libsdm-diag.so|a2b532158e12562e1fb74695bf829de1b94c2cde
+-vendor/lib/libsdm-disp-vndapis.so|15a98ef885dbd29935b1107d7a2988ae495abb87
+vendor/lib/libsdmextension.so|cb5d63a477317806cf1a95cfd5393fe83dd86f94
+vendor/lib/libtinyxml2_1.so|aec76b36890b163f9cf1be594d6b082887f0a9b2
+vendor/lib64/libqseed3.so|24ae4dfe5d9fa27a858b64dfafd1c713da6e6fde
+vendor/lib64/libsdedrm.so|8df03ed75d59ad0ae25dd1daa5ba9298a0e4d9ae
+vendor/lib64/libsdm-color.so|ed022cfcc1546c11b82991986e0a938464400858
+vendor/lib64/libsdm-diag.so|6eb99b83036f917070393fa067eaebc50a5ff307
+-vendor/lib64/libsdm-disp-vndapis.so|ba4978c373f9892d884d07c4cf25dba9d73fda1f
+vendor/lib64/libsdmextension.so|69028df8b08ded29b835453b84e9a9c4fea958d1
+vendor/lib64/libtinyxml2_1.so|ba981e332895a053a67fc54a8190365a3ad37f2d
 
 # Health
 vendor/bin/hw/android.hardware.health@2.1-service
