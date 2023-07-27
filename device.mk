@@ -39,6 +39,9 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener
+    
+PRODUCT_PACKAGES += \
+    Eleven
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_configs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_configs.xml \
