@@ -43,7 +43,6 @@ while [ "${#}" -gt 0 ]; do
                 ;;
         * )
                 SRC="${1:?}"
-                SRC_NLA="${2:?}"; shift
                 ;;
     esac
     shift
@@ -51,7 +50,6 @@ done
 
 if [ -z "${SRC}" ]; then
     SRC="adb"
-    SRC_NLA="adb"
 fi
 
 function blob_fixup() {
@@ -83,6 +81,5 @@ function blob_fixup() {
 setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-extract "${MY_DIR}/proprietary-files-NLA.txt" "${SRC_NLA}" "${KANG}" --section "${SECTION}"
 
 "${MY_DIR}/setup-makefiles.sh"
