@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_NLA.mk
+    $(LOCAL_DIR)/voltage_NLA.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_NLA-user \
-    lineage_NLA-userdebug \
-    lineage_NLA-eng
+    voltage_NLA-user \
+    voltage_NLA-userdebug \
+    voltage_NLA-eng
