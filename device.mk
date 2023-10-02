@@ -527,6 +527,10 @@ PRODUCT_PACKAGES += \
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
+    
+# Updater
+PRODUCT_PACKAGES += \
+    Updater
 
 # Verity
 # Only needed for signing
