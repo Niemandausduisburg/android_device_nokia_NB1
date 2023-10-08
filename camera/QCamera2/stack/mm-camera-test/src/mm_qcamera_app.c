@@ -1230,10 +1230,11 @@ int setFlipMode(mm_camera_test_obj_t *test_obj, cam_flip_t mode)
     memset(&param, 0, sizeof(cam_stream_parm_buffer_t));
     memset(&param2, 0, sizeof(cam_stream_parm_buffer_t));
 
-    if (test_obj->zsl_enabled)
+    if (test_obj->zsl_enabled) {
       channel =  &test_obj->channels[MM_CHANNEL_TYPE_ZSL];
-    else
+    } else {
       channel =  &test_obj->channels[MM_CHANNEL_TYPE_PREVIEW];
+    }
 
       /* find snapshot stream */
       for (i = 0; i < channel->num_streams; i++) {
