@@ -471,8 +471,7 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libshim_binder \
-    libshim_gui
+    libshim_binder
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
