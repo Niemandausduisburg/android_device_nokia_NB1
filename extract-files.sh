@@ -61,6 +61,7 @@ function blob_fixup() {
             "${PATCHELF}" --remove-needed "libbacktrace.so" "${2}"
             "${PATCHELF}" --add-needed "liblog.so" "${2}"
             "${PATCHELF}" --add-needed "libshim_binder.so" "${2}"
+            "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
             ;;
         # Hexedit gxfingerprint to load goodix firmware from /vendor/firmware/
         vendor/lib64/hw/gxfingerprint.default.so)

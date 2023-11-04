@@ -950,7 +950,7 @@ vendor/lib64/vendor.qti.hardware.factory@1.0.so
 vendor/lib64/vendor.qti.hardware.factory@1.1.so
 
 # Fingerprint - from NB1 - PPR1.180610.011
-vendor/bin/gx_fpd|bbda3ff49a98fe4960ea82bea9646d9de3256043
+vendor/bin/gx_fpd|23325665ba918a86d0bf3cfddab59e49cf0cca06
 vendor/bin/qfp-daemon|d9a9823e3aaff09a85901efbddf9e32acac19879
 vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8998.so|00949f3eeea90e4dfb6483970939f4ae0344b500
 vendor/lib64/hw/gxfingerprint.default.so|3b71fa79579218375e0ab883723c21441c151393
