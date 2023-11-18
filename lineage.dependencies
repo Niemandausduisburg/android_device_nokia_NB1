@@ -2,13 +2,13 @@
   {
     "repository": "android_kernel_nokia_msm8998",
     "target_path": "kernel/nokia/msm8998",
-    "branch": "LineageOS-20"
+    "branch": "fourteen"
     "remote": "Niemandausduisburg"
   },
   {
-    "repository": "vendor_nokia_NB1",
-    "target_path": "vendor/nokia/NB1",
-    "branch": "thirteen",
+    "repository": "vendor_nokia_NLA",
+    "target_path": "vendor/nokia/NLA",
+    "branch": "fourteen",
     "remote": "Niemandausduisburg"
   }
 ]

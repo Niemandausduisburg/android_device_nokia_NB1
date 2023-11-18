@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_NLA.mk
+    $(LOCAL_DIR)/aosp_NLA.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_NLA-user \
-    lineage_NLA-userdebug \
-    lineage_NLA-eng
+    aosp_NLA-user \
+    aosp_NLA-userdebug \
+    aosp_NLA-eng

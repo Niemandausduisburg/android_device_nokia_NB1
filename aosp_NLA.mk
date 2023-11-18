@@ -12,33 +12,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 PRODUCT_SHIPPING_API_LEVEL := 27
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit from NLA device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# riceDroid flags
-RISING_CHIPSET := msm8998
-RISING_MAINTAINER := Niemandausduisburg
-TARGET_USE_PIXEL_FINGERPRINT := false
-TARGET_BUILD_APERTURE_CAMERA := true
-ifeq ($(BUILD_GAPPS),false)
-RISING_PACKAGE_TYPE := AOSP
-endif
-TARGET_EXCLUDES_AUDIOFX := false
-
-# MindtheGapps
-ifeq ($(BUILD_GAPPS),true)
-WITH_GMS := false
-TARGET_CORE_GMS := false
-RISING_PACKAGE_TYPE := MindtheGapps
-$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
-endif
-
 # Extra Google/Pixel features 
 TARGET_SUPPORTS_QUICK_TAP := true
 
-PRODUCT_NAME := lineage_NLA
+PRODUCT_NAME := aosp_NLA
 PRODUCT_DEVICE := NLA
 PRODUCT_MANUFACTURER := HMD Global
 PRODUCT_BRAND := Nokia
