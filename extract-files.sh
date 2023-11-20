@@ -63,9 +63,23 @@ function blob_fixup() {
             "${PATCHELF}" --add-needed "libshim_binder.so" "${2}"
             "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
             ;;
+	vendor/lib64/hw/fingerprint.msm8998.so )
+            "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+            "${PATCHELF}" --add-needed "libhidlbase_shim.so" "${2}"
+            ;;
+	# Patch fingerprint blobs to load libstdc++_vendor
+	vendor/lib64/libfpjni.so | vendor/lib64/libfpservice.so | vendor/lib64/libqfp-service.so)
+	    "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+	    ;;
+	# Make libfp_client and fingerprint blobs load on Android U
+	vendor/lib64/libfp_client.so)
+	    "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+	    "${PATCHELF}" --add-needed "libhidlbase_shim.so" "${2}"
+	    ;;
         # Hexedit gxfingerprint to load goodix firmware from /vendor/firmware/
         vendor/lib64/hw/gxfingerprint.default.so)
             sed -i -e 's|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g' "${2}"
+            "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
             ;;
         vendor/bin/pm-service)
             grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
