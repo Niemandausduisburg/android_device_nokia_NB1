@@ -137,6 +137,9 @@ on boot
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/device/extldo
     chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
 
+    # Disable surfaceflinger prime_shader
+    setprop service.sf.prime_shader_cache 0
+
     # This location is used by QCRIL to host UNIX domain
     # socket files used for internal IPC within QCRIL
     # modules
@@ -480,6 +483,9 @@ on property:sys.boot_completed=1
 
     # Start perf
     setprop vendor.post_boot.parsed 1
+
+    # Enable surfaceflinger prime_shader
+    setprop service.sf.prime_shader_cache 1
 
     # Enable ZRAM
     swapon_all /vendor/etc/fstab.qcom
