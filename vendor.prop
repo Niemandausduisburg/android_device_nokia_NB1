@@ -149,6 +149,8 @@ debug.sf.disable_client_composition_cache=1
 debug.sf.recomputecrop=0
 debug.sf.recomputecrop=0
 debug.sf.disable_hwc=0
+debug.sf.latch_unsignaled=0
+debug.sf.disable_backpressure=1
 debug.sf.layer_caching_active_layer_timeout_ms=1000
 debug.sf.enable_transaction_tracing=false
 debug.sf.predict_hwc_composition_strategy=0
@@ -210,7 +212,6 @@ ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=4096
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
-debug.sf.latch_unsignaled=0
 
 # Media
 vidc.enc.dcvs.extra-buff-count=2
