@@ -188,6 +188,9 @@ sys.gxfp.lv=1
 # FM
 vendor.hw.fm.init=0
 
+# GPS
+persist.backup.ntpServer=0.pool.ntp.org
+
 # Graphics
 ro.hardware.vulkan=adreno
 ro.hardware.egl=adreno

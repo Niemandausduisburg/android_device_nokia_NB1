@@ -5238,9 +5238,9 @@ void GnssAdapter::reportPdnTypeFromWds(int pdnType, AGpsExtType agpsType, std::s
         inline MsgReportAtlPdn(GnssAdapter& adapter, int pdnType,
                 AgpsManager* agpsManager, AGpsExtType agpsType,
                 const string& apnName, AGpsBearerType bearerType) :
-            LocMsg(), mAgpsManager(agpsManager), mAgpsType(agpsType),
-            mApnName(apnName), mBearerType(bearerType),
-            mAdapter(adapter), mPdnType(pdnType) {}
+            LocMsg(), mAdapter(adapter), mPdnType(pdnType),
+            mAgpsManager(agpsManager), mAgpsType(agpsType),
+            mApnName(apnName), mBearerType(bearerType) {}
         inline virtual void proc() const {
             mAgpsManager->reportAtlOpenSuccess(mAgpsType,
                     const_cast<char*>(mApnName.c_str()),
@@ -5269,8 +5269,8 @@ void GnssAdapter::dataConnOpenCommand(
 
         inline AgpsMsgAtlOpenSuccess(GnssAdapter& adapter, AgpsManager* agpsManager,
                 AGpsExtType agpsType, const char* apnName, int apnLen, AGpsBearerType bearerType) :
-                LocMsg(), mAgpsManager(agpsManager), mAgpsType(agpsType), mApnName(
-                        new char[apnLen + 1]), mBearerType(bearerType), mAdapter(adapter) {
+                LocMsg(), mAdapter(adapter), mAgpsManager(agpsManager), mAgpsType(agpsType),
+                        mApnName(new char[apnLen + 1]), mBearerType(bearerType) {
 
             LOC_LOGV("AgpsMsgAtlOpenSuccess");
             if (mApnName == nullptr) {
