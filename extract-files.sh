@@ -77,11 +77,6 @@ function blob_fixup() {
         product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml|product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
             sed -i 's/version="2.0"/version="1.0"/g' "${2}"
             ;;
-	# Patch DRM blobs to load full protobuf
-	vendor/lib64/libwvhidl.so | vendor/lib64/mediadrm/libwvdrmengine.so)
-            "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite-3.9.1.so" "libprotobuf-cpp-full-3.9.1.so" "${2}"
-            ;;
-
     esac
 }
 
