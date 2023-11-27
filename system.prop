@@ -92,9 +92,6 @@ ro.opa.eligible_device=true
 # VoLTE
 persist.dbg.ims_volte_enable=1
 
-# Zygote
-persist.device_config.runtime_native.usap_pool_enabled=true
-
 # Disable MTE Async for system server
 arm64.memtag.process.system_server=off
 
