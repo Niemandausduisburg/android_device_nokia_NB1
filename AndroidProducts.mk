@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_NLA.mk
+    $(LOCAL_DIR)/rising_NLA.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_NLA-user \
-    aosp_NLA-userdebug \
-    aosp_NLA-eng
+    rising_NLA-user \
+    rising_NLA-userdebug \
+    rising_NLA-eng
