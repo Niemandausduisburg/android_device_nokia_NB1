@@ -24,6 +24,17 @@ TARGET_BOOT_ANIMATION_RES := 1080
 RISING_CHIPSET := msm8998
 RISING_MAINTAINER := Niemandausduisburg
 TARGET_USE_PIXEL_FINGERPRINT := false
+ifeq ($(BUILD_GAPPS),false)
+RISING_PACKAGE_TYPE := AOSP
+endif
+
+# MindtheGapps
+ifeq ($(BUILD_GAPPS),true)
+WITH_GMS := false
+TARGET_CORE_GMS := false
+RISING_PACKAGE_TYPE := MindtheGapps
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+endif
 
 PRODUCT_NAME := rising_NLA
 PRODUCT_DEVICE := NLA
