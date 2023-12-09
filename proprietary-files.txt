@@ -1698,6 +1698,6 @@ vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc|e30c2941ce57abdb4de
 -vendor/etc/vintf/manifest/android.hardware.drm@1.4-service.widevine.xml|f7bdeffa1778a8c452ee56113a352cffa651a9cd
 vendor/lib64/libwvhidl.so|49d15a003a14c78982e38802f6d4f6b58e07ee86
 
-# WiFi
-vendor/bin/cnss-daemon
-vendor/bin/cnss_diag
+# WiFi - from A1N_sprout - 00WW_FIH-user 10 QKQ1.190828.002 00WW_5_120 release-keys
+vendor/bin/cnss-daemon|ed59715558ace0fa5c724de514d45017539fcd12
+vendor/bin/cnss_diag|c89246db0915c90785004de7451ca3a32de0d9ee
