@@ -923,13 +923,13 @@ vendor/lib64/vendor.qti.hardware.factory@1.0.so
 vendor/lib64/vendor.qti.hardware.factory@1.1.so
 
 # Fingerprint - from NB1 - PPR1.180610.011
-vendor/bin/gx_fpd|bbda3ff49a98fe4960ea82bea9646d9de3256043
+vendor/bin/gx_fpd|72f01a1a09796e95fb6de686423e59e7d4678a74
 vendor/bin/qfp-daemon|d9a9823e3aaff09a85901efbddf9e32acac19879
-vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8998.so|00949f3eeea90e4dfb6483970939f4ae0344b500
-vendor/lib64/hw/gxfingerprint.default.so|3b71fa79579218375e0ab883723c21441c151393
-vendor/lib64/libfp_client.so|a132bbbde9ef7aac598fd314c087272dd474ded1
-vendor/lib64/libfpjni.so|b27759058f391fb5d24ca8e545e4bba6aa042c4c
-vendor/lib64/libfpservice.so|29fd00a0bbd06c3cd608133b04205625b571d824
+vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8998.so|0aace282d61398258b8a06a763e904dea2760d7c
+vendor/lib64/hw/gxfingerprint.default.so|4a03c5c04efb1550327e5a4b01296abbefba48c3
+vendor/lib64/libfp_client.so|ed43d49bf6f51776eab0fb1d42e0fb513dc162b7
+vendor/lib64/libfpjni.so|42ab5dd7e1a34b189137539e2ee9e1ec8a2f70ec
+vendor/lib64/libfpservice.so|d05cddadb63e41694e864545803b870390f1e581
 vendor/lib64/libqfp-service.so|036eaa1619d071d7897ad216410554ba2345485c
 
 # Fingerprint (Firmware) - from NB1 - PPR1.180610.011
