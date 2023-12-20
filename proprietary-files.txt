@@ -927,7 +927,7 @@ vendor/bin/gx_fpd|72f01a1a09796e95fb6de686423e59e7d4678a74
 vendor/bin/qfp-daemon|d9a9823e3aaff09a85901efbddf9e32acac19879
 vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8998.so|0aace282d61398258b8a06a763e904dea2760d7c
 vendor/lib64/hw/gxfingerprint.default.so|4a03c5c04efb1550327e5a4b01296abbefba48c3
-vendor/lib64/libfp_client.so|ed43d49bf6f51776eab0fb1d42e0fb513dc162b7
+vendor/lib64/libfp_client.so|afba33a98f13abc37e2e46dd72dd57cba47fd86f
 vendor/lib64/libfpjni.so|42ab5dd7e1a34b189137539e2ee9e1ec8a2f70ec
 vendor/lib64/libfpservice.so|d05cddadb63e41694e864545803b870390f1e581
 vendor/lib64/libqfp-service.so|036eaa1619d071d7897ad216410554ba2345485c
