@@ -41,6 +41,7 @@ PRODUCT_PACKAGES += \
     libvolumelistener
     
 PRODUCT_PACKAGES += \
+    AudioFX \
     Eleven
 
 PRODUCT_COPY_FILES += \
