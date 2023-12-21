@@ -109,6 +109,9 @@ PRODUCT_PACKAGES += \
     mm-qcamera-app \
     libhal_dbg
     
+PRODUCT_PACKAGES += \
+    Aperture
+    
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.CDS=off
 
