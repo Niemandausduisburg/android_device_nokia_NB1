@@ -1,5 +1,5 @@
-## Common proprietary files
-## From Nokia/Daredevil_00WW/DDV_sprout:11/RKQ1.210607.001/00WW_3_69G:user/release-keys unless pinned
+## All proprietary files from this list, unless pinned and noted otherwise,
+## are from DDV_sprout (00WW_3_69G).
 
 # Audio (Hardware) - from A1N_sprout QKQ1.190828.002
 vendor/etc/audio/silence_48k.wav|26df84a9ba771f568ae58f69a248cea4ce8b6209
