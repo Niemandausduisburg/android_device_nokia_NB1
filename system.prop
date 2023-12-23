@@ -122,3 +122,6 @@ ro.fastbootd.available=true
 suspend.short_suspend_threshold_millis=2000
 suspend.short_suspend_backoff_enabled=true
 suspend.max_sleep_time_millis=40000
+
+# Workaround for fdsan attempting to close file in recovery
+debug.fdsan=warn_once
