@@ -73,9 +73,14 @@ function blob_fixup() {
             "${PATCHELF_0_17_2}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
             ;;
 	# Patch fingerprint blobs to load libstdc++_vendor
-	vendor/lib64/libfp_client.so | vendor/lib64/libfpjni.so | vendor/lib64/libfpservice.so | vendor/lib64/libqfp-service.so)
+	vendor/lib64/libfpjni.so | vendor/lib64/libfpservice.so | vendor/lib64/libqfp-service.so)
 	    "${PATCHELF_0_17_2}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
 	    ;;
+	# Remove libhidlbase_shim.so
+	vendor/lib64/libfp_client.so)
+	    "${PATCHELF_0_17_2}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+            "${PATCHELF}" --remove-needed "libhidlbase_shim.so" "${2}"
+           ;;
 	# Patch pm-service to load libutils-v33
         vendor/bin/pm-service)
             grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
