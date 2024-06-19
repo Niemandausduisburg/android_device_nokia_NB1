@@ -36,6 +36,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libgui_vendor:32
 
+# HIDL
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+
 # Hotword Enrollment
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-hotword.xml
