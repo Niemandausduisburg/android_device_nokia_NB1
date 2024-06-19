@@ -6,8 +6,3 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_NB1.mk
-
-COMMON_LUNCH_CHOICES := \
-    lineage_NB1-eng \
-    lineage_NB1-userdebug \
-    lineage_NB1-user
