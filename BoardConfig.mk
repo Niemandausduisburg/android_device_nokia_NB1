@@ -18,6 +18,9 @@ include device/nokia/msm8998-common/BoardConfigCommon.mk
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8998
 
+# Density
+TARGET_SCREEN_DENSITY := 520
+
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
