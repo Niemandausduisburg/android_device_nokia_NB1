@@ -1,2 +1,7 @@
 # Modem config
 /(vendor|system/vendor)/bin/init\.fih\.modemconfig\.sh        u:object_r:qti_init_shell_exec:s0
+
+# OIS
+/sys/kernel/ois_control/gyro_cal		                u:object_r:sysfs_ois:s0
+/sys/kernel/range/cal_data		                        u:object_r:sysfs_ois:s0
+/sys/kernel/range/enable_ps_sensor		                u:object_r:sysfs_range:s0

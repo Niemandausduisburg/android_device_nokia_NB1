@@ -1,0 +1,3 @@
+# Sysfs
+type sysfs_ois, sysfs_type, fs_type;
+type sysfs_range, sysfs_type, fs_type;

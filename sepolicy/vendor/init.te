@@ -1,0 +1,2 @@
+# OIS	
+allow init sysfs_ois:file w_file_perms;
