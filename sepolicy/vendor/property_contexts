@@ -1,2 +1,10 @@
+# Fingerprint
+sys.gxfp.version                                        u:object_r:vendor_fingerprint_prop:s0
+sys.gxfp.lv                                             u:object_r:vendor_fingerprint_prop:s0
+ro.template.count                                       u:object_r:vendor_fingerprint_prop:s0
+sys.fih.fingerprint                                     u:object_r:vendor_fingerprint_prop:s0
+sys.fp.vid                                              u:object_r:vendor_fingerprint_prop:s0
+persist.enable.esd                                      u:object_r:vendor_fingerprint_prop:s0
+
 # Modem config
 persist.vendor.radio.nokia_fih_mcfg                     u:object_r:vendor_radio_prop:s0

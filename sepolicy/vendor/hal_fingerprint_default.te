@@ -1,0 +1,25 @@
+# Allow Goodix binder communication
+binder_call(hal_fingerprint_default, gx_fpd)
+binder_call(hal_fingerprint_default, keystore)
+
+# Add services
+allow hal_fingerprint_default gx_fpd_service:service_manager find;
+allow hal_fingerprint_default fingerprint_service:service_manager find;
+
+# Allow access to uhid device
+allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;
+
+# Add auth tokens to KeyStore
+use_keystore(hal_fingerprint_default)
+allow hal_fingerprint_default keystore:keystore_key add_auth ;
+
+# Allow hal_fingerprint_default to set vendor_fingerprint_prop	
+set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
+
+# hal_fingerprint_default rules
+allow hal_fingerprint_default storage_file:dir search;	
+allow hal_fingerprint_default storage_file:lnk_file read;	
+allow hal_fingerprint_default mnt_user_file:dir search;	
+allow hal_fingerprint_default mnt_user_file:lnk_file read;	
+allow hal_fingerprint_default sdcardfs:dir search;	
+allow hal_fingerprint_default sdcardfs:file getattr;
