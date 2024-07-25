@@ -18,6 +18,9 @@ include device/nokia/msm8998-common/BoardConfigCommon.mk
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8998
 
+# Camera
+TARGET_SUPPORT_HAL1 := false
+
 # Density
 TARGET_SCREEN_DENSITY := 520
 
