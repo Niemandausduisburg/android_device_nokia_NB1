@@ -520,3 +520,9 @@ vendor/lib64/sensors.ssc.so
 # Sensor configurations
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sensor_def_qcomdev.conf
+
+# Wi-Fi
+vendor/etc/wifi/bdf/bdwlan_nb1_def.bin
+vendor/etc/wifi/bdf/bdwlan_pkg_nb1.bin
+vendor/etc/wifi/aoa_cldb_falcon.bin
+vendor/etc/wifi/aoa_cldb_swl14.bin
