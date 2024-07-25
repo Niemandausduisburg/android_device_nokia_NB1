@@ -62,12 +62,3 @@ service vendor.gx_fpd /vendor/bin/gx_fpd
 
 on property:sys.boot_completed=1
     restorecon_recursive /data/system/fingerprint/
-
-on property:vendor.wifi.mtu=true
-   write /sys/class/net/wlan0/mtu 1440
-
-on property:vendor.wifi.mtu=false
-   write /sys/class/net/wlan0/mtu 1500
-
-on property:vendor.wifi.ommtu=true
-   write /sys/class/net/wlan0/mtu 1390
