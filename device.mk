@@ -34,6 +34,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    camera.msm8998 \
     libgui_vendor:32
 
 # HIDL
