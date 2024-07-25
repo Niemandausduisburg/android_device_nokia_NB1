@@ -2,6 +2,9 @@ import /vendor/etc/init/hw/init.nb1.camera.rc
 import /vendor/etc/init/hw/init.fih.modemconfig.rc
 import /vendor/etc/init/hw/init.fih.poweroff_charging.rc
 
+on early-boot
+    write /mnt/vendor/persist/sensors/sns.reg 0
+
 on boot
     # Set fingerprint device permissions
     chown system system /dev/goodix_fp
