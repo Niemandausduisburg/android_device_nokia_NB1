@@ -8,11 +8,6 @@
 
 function blob_fixup() {
     case "${1}" in
-        # Use vendor version of libgui
-        vendor/lib/hw/camera.msm8998.so)
-            "${PATCHELF}" --replace-needed "libgui.so" "libgui_vendor.so" "${2}"
-            "${PATCHELF}" --add-needed "libshim_gui.so" "${2}"
-	    ;;
         # Load sensors.rangefinder.so from /vendor partition
         vendor/lib/libmmcamera2_stats_modules.so)
             sed -i -e 's|system/lib64/sensors.rangefinder.so|vendor/lib64/sensors.rangefinder.so|g' "${2}"

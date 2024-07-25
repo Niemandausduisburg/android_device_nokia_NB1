@@ -42,7 +42,6 @@ etc/audio/silence_48k.wav:vendor/etc/audio/silence_48k.wav
 # Camera HAL
 lib/sensors.rangefinder.so:vendor/lib/sensors.rangefinder.so
 lib64/sensors.rangefinder.so:vendor/lib64/sensors.rangefinder.so
-vendor/lib/hw/camera.msm8998.so
 vendor/lib/libarcsoft_beautyshot.so
 vendor/lib/libarcsoft_beautyshot_video_algorithm.so
 vendor/lib/libdepthmapwrapper.so

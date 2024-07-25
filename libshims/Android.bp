@@ -4,24 +4,6 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-// Camera
-cc_library_shared {
-    name: "libshim_gui",
-    proprietary: true,
-    defaults: ["hidl_defaults"],
-    compile_multilib: "32",
-    srcs: [
-        "DisplayEventReceiver.cpp",
-    ],
-    include_dirs: [
-        "frameworks/native/include",
-    ],
-    shared_libs: [
-        "libgui_vendor",
-        "libutils"
-    ]
-}
-
 // Fingerprint
 cc_library_shared {
     name: "libshim_binder",

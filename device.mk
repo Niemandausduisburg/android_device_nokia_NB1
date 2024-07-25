@@ -70,7 +70,6 @@ PRODUCT_SOONG_NAMESPACES += \
 # Shims
 PRODUCT_PACKAGES += \
     libshim_binder \
-    libshim_gui \
     libfakelogprint
 
 # Ramdisk
