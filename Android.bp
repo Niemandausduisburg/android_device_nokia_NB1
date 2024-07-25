@@ -1,2 +1,9 @@
 soong_namespace {
 }
+
+install_symlink {
+    name: "rfs_msm_mpss_fih_rfs_data_misc_symlink",
+    vendor: true,
+    installed_location: "rfs/msm/mpss/fih_rfs/data/misc",
+    symlink_target: "/data/misc",
+}

@@ -73,6 +73,10 @@ PRODUCT_PACKAGES += \
     libshim_binder \
     libfakelogprint
 
+# RFS MSM MPSS symlinks
+PRODUCT_PACKAGES += \
+    rfs_msm_mpss_fih_rfs_data_misc_symlink
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.nb1.camera.rc \
