@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_NB1.mk
+    $(LOCAL_DIR)/voltage_NB1.mk
