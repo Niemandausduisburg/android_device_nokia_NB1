@@ -45,3 +45,6 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Include the proprietary files
 include vendor/nokia/NB1/BoardConfigVendor.mk
+
+# Inherit from Nokia-Firmware
+include vendor/firmware/NB1/firmware.mk
