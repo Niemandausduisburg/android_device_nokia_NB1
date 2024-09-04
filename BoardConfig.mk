@@ -41,6 +41,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3728096384
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # SEPolicy
+include hardware/nokia/sepolicy/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Include the proprietary files
