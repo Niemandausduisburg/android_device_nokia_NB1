@@ -10,6 +10,10 @@ DEVICE_PATH := device/nokia/NB1
 TARGET_NOKIA_PLATFORM := msm8998
 $(call inherit-product, device/nokia/msm8998-common/msm8998-common.mk)
 
+# Amplifier calibration
+PRODUCT_PACKAGES += \
+    tfa-calib
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/audio/audio_configs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_configs.xml \
