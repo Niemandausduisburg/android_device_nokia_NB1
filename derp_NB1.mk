@@ -17,6 +17,9 @@ $(call inherit-product, vendor/derp/config/common_full_phone.mk)
 # Inherit from NB1 device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+# Sign build with own keys
+$(call inherit-product, vendor/derp-priv/keys/keys.mk)
+
 PRODUCT_NAME := derp_NB1
 PRODUCT_DEVICE := NB1
 PRODUCT_MANUFACTURER := HMD Global
