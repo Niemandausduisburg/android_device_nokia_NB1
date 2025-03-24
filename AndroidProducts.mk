@@ -4,4 +4,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_NB1.mk
+    $(LOCAL_DIR)/derp_NLA.mk

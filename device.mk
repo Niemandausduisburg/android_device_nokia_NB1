@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/nokia/NB1
+DEVICE_PATH := device/nokia/NLA
 
 # Retrofit
 PRODUCT_PACKAGES += check_dynamic_partitions
@@ -85,7 +85,7 @@ PRODUCT_COPY_FILES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
-    WifiOverlayNB1
+    WifiOverlayNLA
 
 # Inherit device specific vendor makefiles
-$(call inherit-product, vendor/nokia/NB1/NB1-vendor.mk)
+$(call inherit-product, vendor/nokia/NLA/NLA-vendor.mk)
