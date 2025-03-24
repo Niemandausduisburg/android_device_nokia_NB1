@@ -22,7 +22,7 @@ import extract_utils.tools
 extract_utils.tools.DEFAULT_PATCHELF_VERSION = '0_9'
 
 namespace_imports = [
-    'device/nokia/NB1',
+    'device/nokia/NLA',
     'hardware/qcom-caf/msm8998',
     'vendor/nokia/msm8998-common',
 ]
@@ -69,7 +69,7 @@ blob_fixups: blob_fixups_user_type = {
 }  # fmt: skip
 
 module = ExtractUtilsModule(
-    'NB1',
+    'NLA',
     'nokia',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
