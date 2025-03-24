@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/nokia/NB1
+DEVICE_PATH := device/nokia/NLA
 
 # A/B
 AB_OTA_PARTITIONS += \
@@ -37,9 +37,9 @@ BOARD_SUPER_PARTITION_METADATA_DEVICE := system
 BOARD_SUPER_PARTITION_SYSTEM_DEVICE_SIZE := 3727949824
 BOARD_SUPER_PARTITION_HIDDEN_DEVICE_SIZE := 39059456
 BOARD_SUPER_PARTITION_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SYSTEM_DEVICE_SIZE) + $(BOARD_SUPER_PARTITION_HIDDEN_DEVICE_SIZE))
-BOARD_SUPER_PARTITION_GROUPS := nb1_dynamic_partitions
-BOARD_NB1_DYNAMIC_PARTITIONS_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) - 4194304) # 4MiB overhead
-BOARD_NB1_DYNAMIC_PARTITIONS_PARTITION_LIST := system_ext system vendor product odm
+BOARD_SUPER_PARTITION_GROUPS := nla_dynamic_partitions
+BOARD_NLA_DYNAMIC_PARTITIONS_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) - 4194304) # 4MiB overhead
+BOARD_NLA_DYNAMIC_PARTITIONS_PARTITION_LIST := system_ext system vendor product odm
 
 # Inherit from common device tree
 include device/nokia/msm8998-common/BoardConfigCommon.mk
@@ -71,4 +71,4 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Include the proprietary files
-include vendor/nokia/NB1/BoardConfigVendor.mk
+include vendor/nokia/NLA/BoardConfigVendor.mk

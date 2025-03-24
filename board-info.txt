@@ -1,1 +1,1 @@
-require board=msm8998|NB1
+require board=msm8998|NB1|NLA|QC_Reference_Phone
