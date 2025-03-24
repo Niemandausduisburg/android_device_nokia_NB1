@@ -1,5 +1,0 @@
-runtime_resource_overlay {
-    name: "WifiOverlayNB1",
-    theme: "WifiOverlayNB1",
-    product_specific: true
-}
