@@ -62,6 +62,16 @@ service vendor.gx_fpd /vendor/bin/gx_fpd
     class main
     user system
     group system
+    
+    # Disable gestures & enable 3-Buttons
+service navbar_overlay /system/bin/enable_navbar_overlay.sh
+    class late_start
+    user system
+    group system
+    oneshot
+    seclabel u:r:shell:s0
 
 on property:sys.boot_completed=1
     restorecon_recursive /data/system/fingerprint/
+    
+    start navbar_overlay
