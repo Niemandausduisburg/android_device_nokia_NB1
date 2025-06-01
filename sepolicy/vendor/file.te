@@ -4,3 +4,6 @@ type sysfs_range, sysfs_type, fs_type;
 
 # Fingerprint
 type gx_fpd_data_file, file_type, data_file_type, core_data_file_type;
+
+# Keydisabler
+type sysfs_keydisabler, file_type;

@@ -4,3 +4,7 @@ service vendor.touch-hal-1-0 /vendor/bin/hw/vendor.lineage.touch@1.0-service.nla
     user system
     group system input
     oneshot
+    
+on boot
+    chown system system /sys/class/keydisabler/key_disable
+    chmod 0660 /sys/class/keydisabler/key_disable
