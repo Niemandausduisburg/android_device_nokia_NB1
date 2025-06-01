@@ -12,6 +12,8 @@ PRODUCT_SHIPPING_API_LEVEL := 25
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+DERPFEST_BUILD_TYPE := Official
+DERPFEST_BUILD_VARIANT := Stable
 
 # Inherit from NLA device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
