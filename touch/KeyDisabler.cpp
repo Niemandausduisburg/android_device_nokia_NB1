@@ -39,8 +39,10 @@ Return<bool> KeyDisabler::isEnabled() {
     if (!mHasKeyDisabler) return false;
 
     if (!android::base::ReadFileToString(kControlPathCommon, &buf)) {
-        LOG(ERROR) << "Failed to read " << kControlPathCommon;
-        return false;
+    	PLOG(ERROR) << "Failed to read from " << kControlPathCommon;
+    	return false;
+    } else {
+    	LOG(INFO) << "Read from " << kControlPathCommon << ": " << buf;
     }
 
     return std::stoi(android::base::Trim(buf)) == 1;
@@ -52,7 +54,10 @@ Return<bool> KeyDisabler::setEnabled(bool enabled) {
     bool isSuccess = false;
 
     if (android::base::WriteStringToFile((enabled ? "1" : "0"), kControlPathCommon)) {
-        isSuccess = true;
+    	LOG(INFO) << "Wrote " << (enabled ? "1" : "0") << " to " << kControlPathCommon;
+    	isSuccess = true;
+    } else {
+    	PLOG(ERROR) << "Failed to write to " << kControlPathCommon;
     }
 
     return isSuccess;
